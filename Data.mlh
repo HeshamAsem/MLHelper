@@ -18,7 +18,7 @@ open interval, that is the interval excluding a and b. Similarly, [a, b) denotes
 interval that includes a but excludes b. For the most part, however, there will be
 little need to dwell on such refinements as whether the end points of an interval are
 included or not.
-The M × M identity matrix (also known as the unit matrix) is denoted IM,
+The M Ã— M identity matrix (also known as the unit matrix) is denoted IM,
 which will be abbreviated to I where there is no ambiguity about it dimensionality.
 It has elements Iij that equal 1 if i = j and 0 if i = j.
 A functional is denoted f[y] where y(x) is some function. The concept of a
