@@ -1,0 +1,4214 @@
+complex numbers
+f = complex(3,4)
+*
+mathematical processes
+x + y 
+x - y
+x * y
+x / y
+x // y
+x % y
+x ** y
+x == y
+x > y
+x >= y
+x < y
+x <= y
+15 < a < 30
+abs(x)
+int(x)
+divmod(x,y)
+pow(x,y)
+
+*
+math library
+import math as m
+m.factorial(x)
+m.exp(x)
+m.log()
+m.log(x,y)
+m.log10(x)
+m.sqrt(x)
+m.degrees(x)
+m.radians(x)
+m.sin(x)
+m.cos(x)
+m.tan(x)
+m.asin(x)
+m.acos(x)
+m.atan(x)
+m.sinh(x)
+m.cosh(x)
+m.tanh(x)
+m.asinh(x)
+m.acosh(x)
+m.atanh(x)
+m.pi
+m.e
+m.tau
+m.inf
+m.copysign(a,b)
+m.ceil(x)
+m.floor(x)
+m.erf(x)
+m.gamma(x)
+*
+string
+list(a)
+sorted(list(a))
+set(x)
+a.split() # split by space
+a.split('s ') #split be charachter
+a.splitlines() #split each line
+a.partition('and') #part by a word
+a.rpartition('and') #same but at right
+a.find('he') #search from left
+a.rfind('he') #search from right
+a.index('e')
+a.replace ('f','i')
+a.replace ('sweet','ugly')
+a.count('m')
+a.capitalize()
+a.title()
+a.upper()
+a.swapcase()
+a.center(30)
+a.ljust(30) #add spaces
+a.rjust(30)
+a.rjust(30 ,'*')
+'435'.zfill(10) #add zeros
+a.isalpha() #all letters are alphabetic
+a.strip() #trim spaces
+a.rstrip()
+a.lstrip()
+x = "**abc**"
+print(x.strip('*'))  #trim specific character
+a.isdigit()
+a.isupper() 
+a.islower() 
+a.istitle()
+a.endswith(‘alabama’)
+a.startswith(‘sweet’)
+a = ', '.join( ('one', 'two', 'three') )
+'  '.join('hello')
+*
+string using \
+a = "sweet \n home alabama"
+a= r'C:\some\name'
+a = "sweet \t home alabama"
+a = """ sweet home
+           alabama """
+a , b = 'aaaa' , 'bbbbb'
+print(a,end='')
+print(b)
+
+*
+string using %
+aaa = "alabama"
+a = "sweet home %s" %aaa	#use string
+------------------------------------------
+bbb = 136
+a = "sweet home %d" %bbb #use numbers
+------------------------------------------
+a = "sweet %s %d" % ( aaa , bbb)  #both
+------------------------------------------
+a = "numbers %5d" %7   #add spaces
+------------------------------------------
+a = "numbers %05d" %7   #add zeros
+
+*
+string format
+"The value of pi is {}".format(np.pi)
+------------------------------------------
+'{0} and {1}'.format('red', 'blue')
+------------------------------------------
+'{1} and {0}'.format('red', 'blue')
+------------------------------------------
+"First: {first}. Last: {last}.".format(last='Z', first='A')
+------------------------------------------
+"pi = {0:.3f}".format(np.pi)
+------------------------------------------
+'{:s} {:d} years old'.format('Im',20)
+------------------------------------------
+'|' + '{:^51}'.format('Hello') + '|'
+------------------------------------------
+'{0:10} ==> {1:10d}'.format('name', 56322)
+*
+re library
+import re
+email = re.compile('\w+@\w+\.[a-z]{1}')
+text = "To email Guido, try guido@python.org or guido@google.com "
+print(email.findall(text))
+------------------------------------------
+import re
+text = "To email Guido, try guido@python.org or guido@google.com "
+email3=re.compile(r'([\w.]+)@(\w+)\.([a-z]{3})')
+print(email3.findall(text))
+------------------------------------------
+import re
+text = "To email Guido, try guido@python.org or guido@google.com "
+email4=re.compile(r'(?P<user>[\w.]+)@(?P<domain>\w+).(?P<suffix>[a-z]{3})')
+match=email4.match('guido@python.org')
+print(match.groupdict())
+
+*
+files write
+f= open('D:\\1\\1.txt','w') #write
+f.write('write this line in the file')
+f.close()
+
+*
+file append
+f= open('D:\\1\\1.txt','a') #append
+*
+file read
+f= open('D:\\1\\1.txt','r') #read
+for a in f:
+    print(a)
+*
+file csv write
+outfile = open('D:\\1\\5.csv', 'w')
+outfile.write('a')
+outfile.close()
+
+*
+file excel write
+outfile = open('D:\\1\\5.xls', 'w')
+outfile.write('a')
+outfile.close()
+
+*
+file excel read
+outfile = open('D:\\1\\5.xls', 'r')
+for g in outfile:
+    print(g)
+
+*
+os default path
+import os
+a=os.getcwd()
+print(a)
+
+*
+make folder
+os.makedirs('D:\\1\\00' , exist_ok = True)
+*
+file or folder exists
+a = os.path.exists('D:\\00')
+a = os.path.exists('D:\\1\\0.txt')
+
+*
+copy file
+import shutil as sh
+sh.copyfile( 'D:\\1\\1.txt', 'D:\\1\\00\\0.txt')
+
+*
+copy folder
+import shutil as sh
+sh.copytree('D:\\1\\00' , 'D:\\1\\33')
+
+*
+move file
+import shutil as sh
+sh.move('D:\\1\\1.txt' , 'D:\\1\\33\\55.txt') 
+
+*
+list remove
+y.remove("b")
+*
+list sort
+sorted(y)
+y.sort()
+sorted(y,reverse = True)
+
+*
+list sort lambda
+sorted(y, key=lambda e: e[1])
+sorted(y,reverse = True, key=lambda e: e[3])
+
+student_tuples = [('john', 'A', 15),('jane', 'B', 12),('dave', 'B', 10)]
+a = sorted(student_tuples, key=lambda student: student[2])
+
+*
+make list with for
+y = [ x**3 for x in range(12)]
+------------------------------------------
+ss = [-5 + i*0.5 for i in range(20)]
+------------------------------------------
+L = [[0 for i in range(5)] for j in range(7)]
+------------------------------------------
+f = [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+*
+make list with lambda
+y = list(map(lambda x : x**3 , range(12)))
+*
+enumerate
+my_list = ['apple', 'banana', 'grapes', 'pear']
+for c, value in enumerate(my_list, 1):  #start with 1
+    print(c, value)
+------------------------------------------
+
+my_list = ['apple', 'banana', 'grapes', 'pear']
+for c, value in enumerate(my_list, 4):   #start with 4
+    print(c, value)
+
+*
+zip
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+for a, b in zip(alist, blist):
+    print (a, b)
+
+*
+itemgetter
+from operator import itemgetter
+student_tuples = [('john', 'A', 15),('jane', 'B', 12),('dave', 'B', 10),]
+------------------------------------------
+print(sorted(student_tuples, key=itemgetter(2))) #sort by age
+------------------------------------------
+print(sorted(student_tuples, key=itemgetter(1,2))) #sort  by class then age
+------------------------------------------
+messages = ['critical!!!', 'hurry!', 'bla bla', 'alabama']
+print sorted(messages, key=methodcaller( 'count', 'a')) #sort by count of letter a
+
+*
+list operations
+a or b
+a and b
+a | b
+a.union(b)
+b.union(a)
+------------------------------------------
+a & b
+a.intersection(b)
+------------------------------------------
+a ^ b
+a.symmetric_difference(b)
+b.symmetric_difference(a)
+------------------------------------------
+a - b
+a.difference(b)
+
+*
+dictionary
+allkeys = {'egypt':'0020' , 'america':'001' , 'ksa':'00966'}
+------------------------------------------
+{n:n**2 for n in range(6)}
+------------------------------------------
+allkeys['egypt'] = '0030'
+------------------------------------------
+print ('egypt' in allkeys)
+------------------------------------------
+print ('0020' in allkeys)
+------------------------------------------
+print ('0020' in allkeys.values())
+------------------------------------------
+print (allkeys.get('egypt'))
+------------------------------------------
+print (allkeys.get('egypt','0300'))
+------------------------------------------
+print (allkeys.get('France','044'))
+------------------------------------------
+allkeys['Germany'] = '0046'
+------------------------------------------
+del(allkeys['egypt'] )
+------------------------------------------
+allkeys.clear()
+------------------------------------------
+del(allkeys)
+------------------------------------------
+len(allkeys)
+------------------------------------------
+dic = allkeys.copy()
+------------------------------------------
+list1 = {"a","b","c","d"}
+dic2 = dict.fromkeys(list1)
+------------------------------------------
+dic2['a'] = 'aaa'
+------------------------------------------
+a=list(dic2.keys())
+------------------------------------------
+b = list(dic2.values())
+------------------------------------------
+c = list(dic2.items())
+------------------------------------------
+allkeys={'names':('a','b','c'),'address':('x','y','z')}
+print ( allkeys )
+
+print ( allkeys['names'] )
+
+print(allkeys['names'][2])
+------------------------------------------
+del ( allkeys['names'])
+------------------------------------------
+students = ['dave', 'john', 'jane']
+grades = {'john': 'F', 'jane':'A', 'dave': 'C'}
+print sorted(students , key=grades.__getitem__)
+
+*
+if condition
+if x != 5 :
+print ('hello')
+------------------------------------------
+if x != 5 :
+print ('hello')
+else :
+print ('no')
+------------------------------------------
+if x != 5 :
+print ('hello')
+elif x > 8 :
+print ('yes')
+else :
+print ('no')
+------------------------------------------
+if x != 5 : print ('hello')
+elif x > 8 : print ('yes')
+else :print ('no')
+------------------------------------------
+a,b = 11,10
+max = a if (a>b) else b
+print (max)
+*
+for loop
+for n in range(2,20,3) :
+print (n)
+------------------------------------------
+f = [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+Y = 'supercalifragilisticexpialidocious'
+for n in range(len(Y)) :
+print (Y[n])
+------------------------------------------
+S = ' '
+Y = 'supercalifragilisticexpialidocious'
+for n in range(len(Y)) :
+S = S + Y[(len(Y) - n-1)]
+------------------------------------------
+t = 'supercalifragilisticexpialidocious'
+for v in t :
+if v == 'x' :
+Continue
+print v
+------------------------------------------
+t = "divide"
+for v in t : 
+	If v == "i" : 
+Continue
+print(v) 
+------------------------------------------
+for v in range(20) : 
+	if v % 5 ==0 : 
+		Continue
+	print(v)
+------------------------------------------
+for v in range(20) : 
+	if v % 5 ==0  or v % 3 == 0  : 
+		Continue
+	print(v)
+------------------------------------------
+for x in range(20) :
+	If x% ==0 : 
+		print("divided over  is " + str(x))
+		continue
+	print("not divided over  is " + str(x))
+------------------------------------------
+YY = "how are you doing"
+for g in YY : 
+	print (g)
+------------------------------------------
+students  = ["ahmed","ramy","heba"]
+
+for a in students : 
+	print(a)
+------------------------------------------
+grades  = {"ahmed":35 ,"mona":40 ,"mena":37 }
+
+for a in grades : 
+	print(a)
+------------------------------------------
+grades  = {"ahmed":35 ,"mona":40 ,"mena":37 }
+
+for a in grades.items() : 
+	print(a)
+------------------------------------------
+grades  = {"ahmed":35 ,"mona":40 ,"mena":37 }
+
+for a,b in grades.items() : 
+	print(a)
+print(b)
+------------------------------------------
+grades  = {"ahmed":35 ,"mona":40 ,"mena":37 }
+
+for a in grades.keys() : 
+	print(a)
+------------------------------------------
+grades  = {"ahmed":35 ,"mona":40 ,"mena":37 }
+
+for a in grades.values() : 
+	print(a)
+------------------------------------------
+students =  ["ahmed","ramy","ramy","mena"]
+
+for i,a in enumerate(students) : 
+	print(i)
+print(a)
+------------------------------------------
+students =  ["ahmed","ramy","ramy","mena"]
+grades = [25,33,66,95]
+for i,a in zip(students,grades) : 
+	print("student" + i + " got " + str(a) + "degree"  )
+------------------------------------------
+a  = [i for i in range(20) ]
+print(a)  
+------------------------------------------
+a  = [i for i in range(20) if i%3 ==0 ]
+print(a) 
+------------------------------------------
+a  = [i for i in range(20) if i%3 ==0  and i %2 ==0 ]
+print(a) 
+------------------------------------------
+a  = [ i**2  for i in range(20) ]
+print(a) 
+------------------------------------------
+a  = [i**2 for i in range(20) if i%3 ==0 and i %2 ==0 ]
+print(a) 
+------------------------------------------
+a  = [(i,j) for i in range(3) for j in range(4)]
+print(a) 
+------------------------------------------
+a  = [(i*2,j+3) for i in range(3) for j in range(4)]
+print(a) 
+------------------------------------------
+for x in range(10) :
+	print(x)
+else :
+	print("Done")
+------------------------------------------
+print(sum([k for k in range(20)]))
+------------------------------------------
+print(sum([1/k for k in range(1,11)]))
+------------------------------------------
+print(sum([3*(k**2) for k in range(150)]))
+------------------------------------------
+a = [3*x for x in [y**2 for y in range(10)]]
+*
+while loop
+n = int(input("input number : "))
+
+while n <= 10 :
+	print(n)
+	n = n +1
+print("Done")
+------------------------------------------
+while True : 
+	a = int(input("Number ?"))
+	if a > 15 : 
+		print("yes")
+		break
+	else :
+		print("No")
+
+print("end")
+------------------------------------------
+n = int(input("input number ?"))
+while n<=100:
+	print(n)
+n = int(input("input number ?"))
+print("Done")
+	
+------------------------------------------
+a = 8
+while a : 
+	print(a)
+	a = a-1
+------------------------------------------
+a = 0
+while a<10 :
+a+=1 
+	print("more")
+else:
+	print("less")
+
+*
+Statistics library
+import statistics as st
+------------------------------------------
+import statistics as st
+b = [1,2,3,4,5,6]
+a = st.mean(b)
+print(a)
+------------------------------------------
+import statistics as st
+a = st.harmonic_mean( [7,2,3,6,9,33,2.5])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.median( [3,6,9,4,5,3.2,9,7])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.median( [3,6,9,4,5,3.2,9,7,9])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.median_low( [3,6,9,4,5,3.2,9,7,9])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.median_high( [3,6,9,4,5,3.2,9,7,9])
+print(a)
+------------------------------------------
+import statistics as st
+a = mode( [2,3,5,4,2,3,6,9,8,5,2,2,3,4,6])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.stdev([3.2,6.9,8.1,-9.3,66])
+print(a)
+------------------------------------------
+import statistics as st
+a = st.variance([3.2,6.9,8.1,-9.3,66])
+print(a)
+
+*
+Random library
+# random number from 0 to 1
+import random as rn
+a = rn.random()
+print(a)
+------------------------------------------
+# random integer from 1 to 20
+import random as rn
+a = rn.randint(1,20)
+print(a)
+------------------------------------------
+# random fraction from 1 to 20
+import random as rn
+a = rn.uniform(1,20)
+print(a)
+------------------------------------------
+# random integer from 0 to 150
+import random as rn
+a = rn.randrange(150)
+print(a)
+------------------------------------------
+# random integer from 0 to 150 with step 2 (even)
+import random as rn
+a =rn.randrange(0,20,2)
+print(a)
+------------------------------------------
+# random choice
+import random as rn
+a =rn.choice(['a','b','c'])
+print(a)
+------------------------------------------
+# random letter
+import random as rn
+a =rn.choice('sweet home alabama')
+print(a)
+------------------------------------------
+# random 10 numbers from 0 to 200
+import random as rn
+a =rn.sample(range(200) ,10)
+print(a)
+------------------------------------------
+# suffle it
+import random as rn
+items = [1,2,3,4,5,6]
+rn.shuffle(items)
+print (items)
+
+*
+Functions
+def star() : 
+    for h in range(10) : 
+        print ('**')
+
+star()
+------------------------------------------
+def star() : 
+    for h in range(10) : 
+        print ('**')
+
+s=star
+s()
+------------------------------------------
+def find_avg(a,b):
+        average = (a+b)/2
+        print ("average is ",average)
+find_avg(2,3)
+
+*
+Functions with Args
+def find_avg(*numbers):
+  sum = 0
+  for i in numbers :
+    sum += i
+  print ("average is ",sum/(len(numbers)))
+  print (numbers)
+find_avg(2,3)
+find_avg(2,3,4)
+find_avg(1,2,3,4,5,6,7,8,9,10)
+------------------------------------------
+def avg_of_two(a,b):
+  print ((a+b)/2)
+def avg_of_three(a,b,c):
+  print ((a+b+c)/3)
+var1 = (1,2)
+avg_of_two(*var1)
+var2 = (1,2,3)
+avg_of_three(*var2)
+------------------------------------------
+def test_var_args(f_arg, *argv):
+    print ("first normal arg:", f_arg)
+    for arg in argv:
+        print ("another arg through *argv :", arg)
+
+test_var_args('ahmed','mohamed','mona','sameh')
+
+*
+Functions with KwArgs
+def print_values(**values):
+  print (values)
+print_values(one = 1, two = 2)
+------------------------------------------
+def print_values(**values):
+  for key, value in values.items():
+    print("{} = {}".format(key,value))
+print_values(one = 1,two = 2,three = 3,four = 4,five = 5)
+------------------------------------------
+def greet_me(**kwargs):
+    if kwargs is not None:
+        for key, value in kwargs.items():
+            print ("%s == %s" %(key,value))
+ 
+greet_me(name="Python")
+------------------------------------------
+def avg_of_two(a,b):
+  print ((a+b)/2)
+def avg_of_three(a,b,c):
+  print ((a+b+c)/3)
+var1 = {'a':1,'b':2}
+avg_of_two(**var1)
+var2 = {'a':1,'b':2,'c':3}
+avg_of_three(**var2)
+
+*
+Functions args & kwargs
+def show_details(a,b,*args,**kwargs):
+  print("a is ",a)
+  print("b is ",b)
+  print("args is ",args)
+  print("kwargs is ",kwargs)
+show_details(1,2,3,4,5,6,7,8,9)
+print("-----------")
+show_details(1,2,3,4,5,6,c= 7,d = 8,e = 9)
+print("-----------") 
+------------------------------------------
+def test_args_kwargs(arg1, arg2, arg3):
+    print ("arg1:", arg1)
+    print ("arg2:", arg2)
+    print ("arg3:", arg3)
+# first with *args
+args = ("two", 3,5)
+test_args_kwargs(*args)
+ 
+# now with **kwargs:
+kwargs = {"arg3": 3, "arg2": "two","arg1":5}
+test_args_kwargs(**kwargs)
+------------------------------------------
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue') :
+    print ( "-- This parrot wouldn't", action)
+    print ("if you put", voltage, "volts through it.")
+    print ("-- Lovely plumage, the", type)
+    print ("-- It's", state, "!")
+
+
+parrot(1000) # 1 positional argument
+parrot(voltage=1000) # 1 keyword argument
+parrot(voltage=1000000, action='VOOOOOM') # 2 keyword arguments
+------------------------------------------
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue') :
+    print ( "-- This parrot wouldn't", action)
+    print ("if you put", voltage, "volts through it.")
+    print ("-- Lovely plumage, the", type)
+    print ("-- It's", state, "!")
+parrot(action='VOOOOOM', voltage=1000000) # 2 keyword arguments
+parrot('a million', 'bereft of life', 'jump') # 3 positional arguments
+parrot('a thousand', state='pushing up the daisies') # 1 positional, 1 keyword
+------------------------------------------
+def parrot(voltage, state='a stiff', action='voom'):
+    print ("-- This parrot wouldn't", action),
+    print ("if you put", voltage, "volts through it."),
+    print ("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+
+parrot(**d)
+------------------------------------------
+#wrong usage
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue') :
+    print ( "-- This parrot wouldn't", action)
+    print ("if you put", voltage, "volts through it.")
+    print ("-- Lovely plumage, the", type)
+    print ("-- It's", state, "!")
+parrot() # required argument missing
+parrot(voltage=5.0, 'dead') # non-keyword argument after a keyword argument
+parrot(110, voltage=220) # duplicate value for the same argument
+parrot(actor='John Cleese') # unknown keyword argument
+
+*
+Function Default Values
+def powers(m, n = 4 ) : 
+    print (m**(n))
+powers(3,2)
+------------------------------------------
+def powers(m, n = 4 ) : 
+    print (m**(n))
+powers(3)
+
+*
+Functions variable scope
+xx = 5
+def gg() : 
+    xx = 14
+gg()
+print (xx)
+------------------------------------------
+xx = 5
+
+def gg() : 
+    global xx
+    xx = 14
+ gg()
+print (xx)
+
+*
+lambda
+powers = lambda x,y : x**y
+print (powers(5,3))
+------------------------------------------
+powers = [lambda x: 1,lambda x: x,lambda x: x**2,lambda x: x**3]
+
+print(powers[0](5))  
+print(powers[1](5))  
+print(powers[2](5))  
+print(powers[3](5))  
+
+*
+Function filter
+mylist = [0,1,2,3,4,5,6,7,8,9]
+evennumber = list(filter(lambda x: x % 2 == 0 , mylist   ))
+oddnumber = list(filter(lambda x: x % 2 == 1 , mylist   ))
+print (evennumber)
+print (oddnumber)
+
+*
+Function map
+mylist = (0,1,2,3,4,5,6,7,8,9)
+print ("square list" , list(map(lambda x: x**2 , mylist)))
+------------------------------------------
+list1 = (1,2,3,4,5,6)
+ def cpower (x):
+    return x**3
+
+print (list(map(lambda x :cpower(x)  , list1)))
+
+*
+Function yield
+def yie():
+    for i in range(10):
+        yield i
+        
+for g in yie():
+       print(g)
+------------------------------------------
+def yie():
+    for i in range(10):
+        yield i
+           
+f = yie()
+print (next(f))
+print (next(f))
+print (next(f))
+------------------------------------------
+def fibon(n):
+    a = b = 1
+    result =[]
+    for i in range(n):
+        result.append (a)
+        a , b = b , a+b
+    return result
+
+print (fibon(20))
+------------------------------------------
+def fibon(n):
+    a = b = 1
+     
+    for i in range(n):
+        yield  a
+        a , b = b , a+b
+     
+for x in fibon(20):
+    print (x)
+
+*
+Function recursive
+def fac(n):
+    if n ==1 : 
+        return 1
+    else : 
+        return n * fac(n-1)
+
+print(fac(10))
+
+*
+Class
+class car : 
+    length = 15
+    width = 8
+    height = 6
+    color = 'white'
+    volume = length * width * height
+    
+print(car.color)
+------------------------------------------
+class car : 
+    length = 15
+    width = 8
+    height = 6
+    color = 'white'
+    volume = length * width * height
+    
+print(car.color)
+------------------------------------------
+class car : 
+    length = 15
+    width = 8
+    height = 6
+    color = 'white'
+    volume = length * width * height
+
+volvo = car
+
+print(volvo.height)
+------------------------------------------
+from myclasses import  car 
+------------------------------------------
+from myclasses import  * 
+
+*
+Class variable
+class car() : 
+    color = 'blue'
+    
+volvo = car
+nissan = car
+
+volvo.color = 'white'
+nissan.color = 'green'
+
+print(volvo.color)
+print(nissan.color)
+
+*
+Class instance
+class car() :
+    def __init__(self, color):
+        self.color = color
+    
+volvo = car('white')
+nissan = car('green')
+
+print(volvo.color)
+print(nissan.color)
+
+*
+Class self
+class calc : 
+    def __init__(self,p2,p3) :
+        self.power2 = p2**2
+        self.power3 = p3**3
+    
+a = calc(40,50)
+print(a.power2)
+print(a.power3)
+------------------------------------------
+class d : 
+    def __init__(self,p2 = 10 ,p3 = 20) : 
+        self.power2 = p2**2
+        self.power3 = p3**3
+a = d()
+print(a.power2)
+print(a.power3)
+------------------------------------------
+class d : 
+    def __init__(self,p2 = 10 ,p3 = 100) : 
+        self.power2 = p2**2
+        self.power3 = p3**3
+a = d(5,3)
+print(a.power2)
+print(a.power3)
+------------------------------------------
+class d : 
+    def __init__(self,p2 = 10 ,p3 = 100) : 
+        self.power2 = p2**2
+        self.power3 = p3**3
+a = d(p2=5,p3=3)
+print(a.power2)
+print(a.power3)
+------------------------------------------
+class d :  
+    def __init__(self,nn,p2 = 10 ,p3 = 100) : 
+        
+        self.power2 = p2**2
+        self.power3 = p3**3
+        self.roots = nn
+        
+    def root(self ) : 
+        print (self.roots**0.5)
+    
+a = d(2500)
+a.root()
+------------------------------------------
+class d :  
+    def square(n) : 
+        print (n**2)
+    
+    def summ(a,b,c,d,e,f) : 
+        return ((a+b-c+e)*(d+f))
+a = d    
+a.square(3)
+print (a.summ(1,2,3,4,5,7))
+------------------------------------------
+class Account:
+    def __init__(self, name, account_number, initial_amount):
+        self.name = name
+        self.no = account_number
+        self.balance = initial_amount
+    def deposit(self, amount):
+        self.balance += amount
+    def withdraw(self, amount):
+        self.balance -= amount
+    def show(self):
+        s = '%s, %s, balance: %s' % (self.name, self.no, self.balance)
+        print (s)
+
+a1 = Account('John Olsson', '19371554951', 20000)
+a2 = Account('Liz Olsson', '19371564761', 50000)
+print("a1 balance :  " , a1.balance )
+print("a2 no      :  " ,   a2.no)
+
+a1.deposit(1000)
+a1.withdraw(4000)
+a2.withdraw(10500)
+a1.withdraw(3500)
+print ("a1's balance:", a1.balance)
+print ("a2's balance:", a2.balance)
+
+a1.show()
+a2.show()
+------------------------------------------
+class Person:
+    def __init__(self, name,mobile_phone=None, office_phone=None,private_phone=None, email=None):
+        self.name = name
+        self.mobile = mobile_phone
+        self.office = office_phone
+        self.private = private_phone
+        self.email = email
+    def add_mobile_phone(self, number):
+        self.mobile = number
+    def add_office_phone(self, number):
+        self.office = number
+    def add_private_phone(self, number):
+        self.private = number
+    def add_email(self, address):
+        self.email = address
+    def dump(self):
+        s = self.name + '\n'
+        if self.mobile is not None:
+            s += 'mobile phone: %s\n' % self.mobile
+        if self.office is not None:
+            s += 'office phone: %s\n' % self.office
+        if self.private is not None:
+            s += 'private phone: %s\n' % self.private
+        if self.email is not None:
+            s += 'email address: %s\n' % self.email
+        print (s)
+
+p1 = Person('Hans Hanson',office_phone='767828283', email='h@hanshanson.com')
+p2 = Person('Ole Olsen', office_phone='767828292')
+p2.add_email('olsen@somemail.net')
+phone_book = [p1, p2]
+
+for person in phone_book:
+    person.dump()
+
+*
+Numpy
+ import numpy as np  
+*
+Numpy - degrees
+a = np.sin(30)
+b = np.cos(30)
+c = np.tan(30)
+
+print(a , b , c)
+------------------------------------------
+a = np.sin(30*np.pi/180)
+b = np.cos(30*np.pi/180)
+c = np.tan(30*np.pi/180)
+
+print(a)
+print(b)
+print(c)
+------------------------------------------
+a = np.sin(np.deg2rad(30))
+
+print(a)
+*
+Numpy - math
+a = np.round(3.68528)
+b = np.round(3.68528,1)
+c = np.round(3.68528,2)
+d = np.round(3.68528,3)
+e = np.round(3.68528,4)
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+------------------------------------------
+a = np.floor(3.68528)
+b = np.ceil(3.68528)
+
+print(a)
+print(b)
+------------------------------------------
+a = np.mod(20,7)
+b = np.power(2,5)
+
+print(a)
+print(b)
+
+*
+Numpy - arrays 1
+a = [2,3,6,5,4,7,8]
+b = np.array(num)
+
+print(a)
+print(b)
+------------------------------------------
+a = [[1,2,3],[5,3,6],[9,6,5]]
+b = np.array(a)
+print(a)
+print(b)
+------------------------------------------
+a = np.array([range(i, i + 3) for i in [2, 4, 6]])
+print(a)
+------------------------------------------
+a = np.array([('x',3,4.2),('y',4,5.3),('z',5,6.3)],
+           dtype =[('name','U5'),('number','i2'),
+                   ('value','f4')])
+print(a)
+------------------------------------------
+a = np.empty((3,2))
+
+print(a)
+
+*
+Numpy - random
+a = np.random.uniform(1,10)
+b = np.random.uniform(1,10,20)
+
+print(a)
+print('-------------------------')
+print(b)
+print('-------------------------')
+------------------------------------------
+a = np.random.random((2,3))
+print(a)
+------------------------------------------
+a = np.random.normal(0,1,10)
+print(a)
+------------------------------------------
+a =  np.random.randint(150)
+print(a)
+------------------------------------------
+a = np.random.randint(5, size=7)
+print(a)
+------------------------------------------
+a = np.random.randint(5,20, size=7)
+print(a)
+------------------------------------------
+a = np.random.randint(0, 10, (3, 3))
+print(a)
+------------------------------------------
+a = np.random.randint(5,10, size=(3, 4, 5))
+print(a)
+------------------------------------------
+a = np.random.randint(1,60,25)
+b = np.reshape(a,(5,5))
+print(a)
+print(b)
+------------------------------------------
+a = np.random.rand(15)
+print(a)
+------------------------------------------
+a = np.random.rand(5,3)
+print(a)
+------------------------------------------
+a = np.random.rand(5,3,2)
+print(a)
+------------------------------------------
+y=[1,2,3,6,9,8,5,4,7,8,9,6,5,9,6]
+a = np.random.choice(y)
+print(a)
+------------------------------------------
+y=[1,2,3,6,9,8,5,4,7,8,9,6,5,9,6]
+a = np.random.choice(y. size = 5)
+print(a)
+------------------------------------------
+y=[1,2,3,6,9,8,5,4,7,8,9,6,5,9,6]
+print(y)
+np.random.shuffle(y)
+print(y)
+
+*
+Numpy - arrays 2
+a = np.zeros(8)
+b = np.ones(10)
+
+print(a)
+print(b)
+------------------------------------------
+a = np.zeros((3,5))
+b = np.ones((6,8))
+
+print(a)
+print(b)
+------------------------------------------
+a = np.zeros((2,3,2))
+b = np.ones((2,3,2))
+
+print(a)
+print(b)
+------------------------------------------
+a = np.eye(5) 
+print(a)
+------------------------------------------
+a = np.full((3, 5), 35)
+print(a)
+------------------------------------------
+a = np.arange(18).reshape(3,6)
+b = np.arange(27).reshape(3,3,3)
+
+print(a)
+print(b)
+------------------------------------------
+b = np.linspace(0,30)
+c = np.linspace(0,100,5)
+
+print(b)
+print(c)
+-------------------------------------------
+b = np.linspace(0,30,12).reshape(3,4)
+c = np.linspace(0,100,27).reshape(3,3,3)
+
+print(b)
+print(c)
+------------------------------------------
+a = np.diag(array([5,12,4,-1,3]))
+b = np.diag(array([5,12,4,-1,3]),k=3)
+print(a)
+print('-------------------------')
+print(b)
+print('-------------------------')
+
+*
+Numpy - arrays 3
+a = np.random.randint(0, 10, (3, 3))
+b = np.count_nonzero(a)
+------------------------------------------
+b = np.count_nonzero(a>5)
+------------------------------------------
+b = np.count_nonzero(a>5,axis=1)
+c = np.count_nonzero(a<8,axis=1)
+------------------------------------------
+a = np.random.randint(0, 10, (3, 3))
+b = np.any(a>5)
+------------------------------------------
+a = np.random.randint(0, 10, (3, 3))
+b = np.any(a>5,axis=1)
+------------------------------------------
+a = np.random.randint(0, 10, (3, 3))
+b = np.all(a>5)
+------------------------------------------
+a = np.random.randint(5,20, size=9).reshape(3,3)
+------------------------------------------
+d = np.isclose(a,b,rtol = 0.1)
+------------------------------------------
+np.multiply(a, 10, out=b)
+------------------------------------------
+np.power(a, 4, out=b)
+------------------------------------------
+b = np.add.reduce(a)
+------------------------------------------
+b = np.multiply.reduce(a)
+------------------------------------------
+b = np.multiply.outer(a,a)
+------------------------------------------
+b = np.add.accumulate(a)
+------------------------------------------
+b = np.multiply.accumulate(a)
+------------------------------------------
+a = np.matrix('{} {} ; {} {}'.format(1,2,3,4))
+------------------------------------------
+c = np.linalg.det(b)
+d = np.linalg.eig(b)
+------------------------------------------
+a = np.arange(36).reshape(6,6)
+------------------------------------------
+x1, x2, x3 = np.split(x, (0, 3))
+------------------------------------------
+c = np.vstack((a,b))
+------------------------------------------
+c = np.hstack((a,b))
+------------------------------------------
+c = np.concatenate([a,b] , axis = 0)
+c = np.concatenate([a,b] , axis = 1)
+------------------------------------------
+d = np.argmax(a)
+e = np.argmin(a)
+------------------------------------------
+b = np.var(a)
+c = np.cov(a)
+------------------------------------------
+b = np.corrcoef(a)
+b = np.linalg.inv(a)
+
+*
+Numpy - open file
+dtype1 = dtype([('gender', '|S1'), ('height', 'f8')])
+a = np.loadtxt('D:\\1.txt', dtype=dtype1, skiprows=9, usecols=(1,3))
+------------------------------------------
+a,b,c = np.loadtxt('D:\\0.txt', unpack=True,skiprows=3)
+------------------------------------------
+data = np.genfromtxt('D:\\0.txt', skip_header=1,
+                  dtype=[('student','u8'),
+                         ('gender','S1'),('black','f8'),
+                         ('colour','f8')],delimiter=',',
+                         missing_values='X')
+
+*
+Numpy - polynomial
+Polynomial = np.polynomial.Polynomial
+X= np.array([0,20,40,60,80,100,120,140,160,180])
+Y= np.array([10,9,8,7,6,5,4,3,2,1])
+points,stats = Polynomial.fit(X,Y,1,full=True)
+------------------------------------------
+a = np.poly1d((-7))
+b = np.poly1d((-7,2))
+c = np.poly1d((-7,2,1))
+d = np.poly1d((-7,2,1,3))
+e = np.poly1d((-7,2,1,3,6))
+------------------------------------------
+a = np.poly1d((-7,2,1,3,6))
+b=a(5)
+------------------------------------------
+a = np.polyval((1,2),2)
+b = np.polyval((1,2,3),7)
+c = np.polyval((1,2,3,5),-3)
+d = np.polyval((1,2,3,5,-6),12.6)
+------------------------------------------
+a = np.polyder(poly1d((1,2,3)))
+b = np.polyder(poly1d((1,2,3)),2)
+------------------------------------------
+a = np.polyder(poly1d((1,2,3)))
+b = np.polyder(poly1d((1,2,3)),2)
+------------------------------------------
+a = np.polyint(poly1d((1,2,3)))
+b = np.polyint(poly1d((1,2,3)),2)
+------------------------------------------
+a = np.polyint(poly1d((1,2,3)))
+b = np.polyint(poly1d((1,2,3)),2)
+------------------------------------------
+a = np.roots(poly1d((1,2)))
+b = np.roots(poly1d((1,2,3)))
+------------------------------------------
+x = array([3,6,2,5,4])
+y = array([2,3,-9,6,2.5])
+z = np.polyfit(x, y, 2)
+
+*
+Numpy - date
+x = np.array('2015-07-04', dtype=datetime64)
+------------------------------------------
+x  = np.datetime64('2015-07-04')
+------------------------------------------
+x = np.datetime64('2015-07-04')
+y = x + np.arange(12)
+------------------------------------------
+x = np.datetime64('2015-07-04')
+y = x - np.arange(12)
+------------------------------------------
+x = np.datetime64('2015-07-04')
+y = np.datetime64('2018-09-21')
+
+*
+Numpy -  fromfunction lamdba
+x = np.fromfunction(lambda i: i**3, (10,))
+------------------------------------------
+x = np.fromfunction(lambda i: 3 * (i+5)**3, (10,))
+------------------------------------------
+x = np.fromfunction(lambda i,j: i+j, (4,5))
+------------------------------------------
+x = np.fromfunction(lambda i,j: 3*i*j, (4,5))
+------------------------------------------
+x = np.fromfunction(lambda i,j,k: i+j+k, (2,3,4))
+------------------------------------------
+x = np.fromfunction(lambda i,j,k: (2*i)+(j**2)*k, (2,3,4))
+------------------------------------------
+def powers(i):
+    i = i**2
+    return i
+x = np.fromfunction(powers, (9,), dtype=int)
+------------------------------------------
+m,n = 20, 5
+def f(i):
+    return (i % n == 0)
+x = np.fromfunction(f, (m,), dtype=int)
+
+*
+Pandas
+import pandas as pd
+*
+Pandas - series
+data = pd.Series([0.25, 0.5, 0.75, 1.0])
+print(data)
+------------------------------------------
+data = pd.Series((0.25, 0.5, 0.75, 1.0))
+print(data.values)
+print(data.index)
+print(data.keys)
+------------------------------------------
+data = pd.Series((3,6,9,8,5,4,2,6,3,5,8))
+print(data.describe())
+------------------------------------------
+data = pd.Series((3,6,9,8,5,4,2,6,3,5,8))
+print(data.agg(['max','min','sum','mean','std']))
+------------------------------------------
+data = pd.Series((0.25, 0.5, 0.75, 1.0))
+print(data[1])
+print(data[1:3])
+print(data[1:3:2])
+------------------------------------------
+data1 = pd.Series([1,2,3,4], index=['a', 'b', 'c', 'd'])
+data2 = pd.Series({'a':1,'b':2,'c':3,'d':4})
+------------------------------------------
+data1 = pd.Series([1,2,3,4], index=['a', 'b', 'c', 'd'])
+data2 = pd.Series({'a':1,'b':2,'c':3,'d':4})
+print(data1['a'])
+print(data2['b'])
+
+*
+Pandas - Index
+x = pd.Index([2,3,5,7,11])
+print(x)
+------------------------------------------
+a = pd.Index([1, 3, 5, 7, 9])
+b = pd.Index([2, 3, 5, 7, 11])
+print(a)
+print(b)
+print(a & b)
+print(a | b)
+print(a ^ b)
+
+*
+Pandas - plot
+import pandas as pd
+data = pd.Series((3,6,9,8,5,4,2,6,3,5,8))
+data.plot()
+data.plot(kind='line')  
+------------------------------------------
+data.plot(kind='pie')  
+------------------------------------------
+data.plot(kind='bar')  
+------------------------------------------
+data.plot(kind='barh')
+------------------------------------------
+data.plot(kind='hist')
+------------------------------------------
+data.plot(kind='box')
+------------------------------------------
+data.plot(kind='kde')
+------------------------------------------
+data.plot(kind='density')
+------------------------------------------
+data.plot(kind='area')
+*
+Pandas - DataFrame 1
+
+import pandas as pd
+import numpy as np
+
+myarray = np.array([[6,9,8,5,4,2],[0,2,5,6,3,9],
+                    [8,5,4,1,2,3],[6,9,8,5,4,2],
+                    [0,5,3,6,9,8],[8,7,4,5,2,3]])
+
+rownames = ['a', 'b','c','d','e','f']
+colnames = ['one', 'two', 'three','four','five','six']
+
+df = pd.DataFrame(myarray, index=rownames, columns=colnames)
+print(df)
+------------------------------------------
+w = pd.Series({'a':1 ,'b':2 ,'c':3 ,'d':4 ,'e':5})
+x = pd.Series({'a':6 ,'b':7 ,'c':8 ,'d':9 ,'e':10})
+y = pd.Series({'a':11 ,'b':12 ,'c':13 ,'d':14 ,'e':15})
+z = pd.Series({'a':16 ,'b':17 ,'c':18 ,'d':19 ,'e':20})
+grades = pd.DataFrame({'Math':w,'Physics':x,'French':y,'Chemistry':z})
+
+print(grades)
+print(grades['Chemistry'])
+print(grades.T)
+print(grades.keys())
+print(grades.values)
+print('Math' in grades.keys())
+print('math' in grades.keys())
+print(12 in grades.values)
+print(55 in grades.values)
+print(grades.stack())
+print(grades.iloc[:3, :2])
+print(grades.loc['b':'c', 'Math':])
+print(grades.loc[grades.Math >3])
+print(grades.loc[grades.Math >3,['French' ,'Math']])
+print(grades.columns)
+print(grades.index)
+print(grades['Math'])
+print(grades.sort_values(['Math'],ascending= False))
+print(grades.sort_values(['French'],ascending= True))
+print(grades.max())
+print(grades.min())
+print(grades.mean())
+print(grades.std())
+print(grades['Math'].max())
+print(grades['French'].min())
+print(grades['Physics'].mean())
+print(grades['Chemistry'].std())
+
+*
+Pandas - DataFrame 2
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.rand(5, 3), columns=['A', 'B', 'C'])
+
+print(df)
+print(df.corr())
+print(df.skew())
+------------------------------------------
+data = [{'square': i**2} for i in range(10)]
+d = pd.DataFrame(data)
+print(d)
+------------------------------------------
+data = [{'square': i**2,'cube': i**3
+         ,'root': i**0.5} for i in range(10)]
+d = pd.DataFrame(data)
+print(d)
+------------------------------------------
+d = pd.DataFrame([{'a':1,'b':2},{'a':3,'b':4},{'a':5,'b':6}])
+print(d)
+------------------------------------------
+d = pd.DataFrame([{'a':1,'b':2},{'b':3,'c':4},{'d':5,'e':6}])
+print(d)
+------------------------------------------
+d =pd.DataFrame(np.random.rand(3, 2),
+                columns=['food', 'drink'],index=['a', 'b', 'c'])
+print(d)
+------------------------------------------
+w = pd.Series({'a':1 ,'b':2 ,'c':3 ,'d':4 ,'e':5})
+x = pd.Series({'a':6 ,'b':7 ,'c':8 ,'d':9 ,'e':10})
+y = pd.Series({'a':11 ,'b':12 ,'c':13 ,'d':14 ,'e':15})
+z = pd.Series({'a':16 ,'b':17 ,'c':18 ,'d':19 ,'e':20})
+grades = pd.DataFrame({'Math':w,'Physics':x,'French':y,'Chemistry':z})
+grades['Total'] = (grades['Math'] + grades['French'] + 
+      grades['Chemistry']+ grades['Physics']) /100
+print(grades)
+------------------------------------------
+df = pd.DataFrame(np.random.rand(5, 3), columns=['A', 'B', 'C'])
+result = (df['A'] + df['B']) / (df['C'] - 1)
+print(df)
+print(result)
+------------------------------------------
+result = pd.eval("(df.A + df.B) / (df.C - 1)")
+------------------------------------------
+result = df.query('A < 0.5 and B < 0.5')
+------------------------------------------
+tmp1 = df.A < 0.5
+tmp2 = df.B < 0.5
+tmp3 = tmp1 & tmp2
+result = df[tmp3]
+------------------------------------------
+result = df[(df.A < 0.5) & (df.B < 0.5)]
+------------------------------------------
+result = df[(df.A < 0.5) | (df.B < 0.5)]
+------------------------------------------
+def make_df(cols, ind):
+    data = {c: [str(c) + str(i) for i in ind] for c in cols}
+    return pd.DataFrame(data, ind)
+
+print(make_df('ABC', range(3)))
+
+*
+Pandas - DataFrame Merge Tables
+import pandas as pd
+df1 = pd.DataFrame({'employee': ['Bob', 'Jake', 'Lisa', 'Sue'],
+                    'group': ['Accounting', 'Engineering',
+                              'Engineering', 'HR']})
+df2 = pd.DataFrame({'employee': ['Lisa', 'Bob', 'Jake', 'Sue'],
+                    'hire_date': [2004, 2008, 2012, 2014]})
+df3 = pd.merge(df1, df2)
+print(df3)
+------------------------------------------
+df4 = pd.DataFrame({'group': ['Accounting', 'Engineering', 'HR'],
+                    'supervisor': ['Carly', 'Guido', 'Steve']})
+df5 = pd.merge(df3, df4)
+print(df4)
+print(df5)
+------------------------------------------
+df1 = pd.DataFrame({'employee': ['Bob', 'Jake', 'Lisa', 'Sue'],
+                    'group': ['Accounting', 'Engineering', 
+                              'Engineering', 'HR']})
+df3 = pd.DataFrame({'name': ['Bob', 'Jake', 'Lisa', 'Sue'],
+                    'salary': [70000, 80000, 120000, 90000]})
+print(pd.merge(df1, df3, left_on="employee", right_on="name"))
+------------------------------------------
+print(pd.merge(df1, df3, left_on="employee",
+               right_on="name").drop('name', axis=1))
+------------------------------------------
+df1 = pd.DataFrame({'name': ['Peter', 'Paul', 'Mary'],
+                    'food': ['fish', 'beans', 'bread']},
+                    columns=['name', 'food'])
+
+df2 = pd.DataFrame({'name': ['Mary', 'Joseph'],
+                    'drink': ['cola', '7 up']},
+                    columns=['name', 'drink'])
+df3 = pd.merge(df1, df2)
+------------------------------------------
+df3 = pd.merge(df1, df2, how='inner')
+------------------------------------------
+df3 = pd.merge(df1, df2, how='outer')
+------------------------------------------
+df3 = pd.merge(df1, df2, how='right')
+------------------------------------------
+df3 = pd.merge(df1, df2, how='left')
+
+*
+Pandas - DataFrame Statistics
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'A': np.random.rand(10),'B': np.random.rand(10)})
+print(df.sum())
+------------------------------------------
+print(df.prod())
+------------------------------------------
+print(df.mean())
+------------------------------------------
+print(df['A'].sum())
+------------------------------------------
+print(df['B'].prod())
+------------------------------------------
+print(df['A'].mean())
+------------------------------------------
+print(df.mean(axis='columns'))
+------------------------------------------
+print(df.mean(axis='rows'))
+------------------------------------------
+print(df.count())
+------------------------------------------
+print(df.min())
+------------------------------------------
+print(df.max())
+------------------------------------------
+print(df.std())
+------------------------------------------
+------------------------------------------
+df = pd.DataFrame({'key':['A','B','C','A','B','C'],
+                   'data': range(6)},columns=['key', 'data'])
+print(df.describe())
+------------------------------------------
+print(df.groupby('key').sum())
+------------------------------------------
+print(df.groupby('key').describe())
+------------------------------------------
+print(df.groupby('key').describe().unstack())
+------------------------------------------
+------------------------------------------
+df = pd.DataFrame({'key': ['A', 'B', 'C', 'A', 'B', 'C'],
+                   'data1': range(6),
+                   'data2': np.random.randint(0, 10, 6)},
+                    columns = ['key', 'data1', 'data2'])
+
+df2 = df.groupby('key').aggregate({'data1': 'min','data2': 'max'})
+------------------------------------------
+def filter_func(x):
+    return x['data2'].std() > 4
+
+df2 = df.groupby('key').filter(filter_func)
+print(df2)
+------------------------------------------
+df2 = df.groupby('key').transform(lambda x: x**2)
+
+*
+Pandas - DataFrame MultiIndex
+import pandas as pd
+index = [('California', 2000),('California', 2010), ('New York', 2000),('New York', 2010), ('Texas', 2000),('Texas', 2010)]
+populations = [10000,15000,20000,25000,30000,35000]
+
+index = pd.MultiIndex.from_tuples(index)
+pop = pd.Series(populations, index=index)
+pop = pop.reindex(index)
+
+print(pop)
+------------------------------------------
+print(pop[:, 2010])
+------------------------------------------
+print(pop.unstack())
+------------------------------------------
+pop_df = pd.DataFrame({'total': pop,
+                       'under18':[9267089, 9284094,4687374,
+                                  4318033,5906301, 6879014]})
+print(pop)
+print(pop_df)
+------------------------------------------
+df = pd.DataFrame(np.random.rand(4, 2),
+                  index=[['a', 'a', 'b', 'b'],
+                         [1, 2, 1, 2]],columns=['income', 'profit'])
+print(df)
+------------------------------------------
+data = {('California', 2000): 10000,('California', 2010):15000,
+        ('Texas', 2000): 20000,('Texas', 2010): 25000,
+        ('New York', 2000): 30000,('New York', 2010): 35000}
+df = pd.Series(data)
+print(df)
+------------------------------------------
+index = pd.MultiIndex.from_product([[2013, 2014],[1, 2]],
+                                   names=['year', 'visit'])
+columns = pd.MultiIndex.from_product([['Bob', 'Guido', 'Sue'],
+                                      ['HR', 'Temp']],
+                                    names=['subject', 'type'])
+data = np.round(np.random.randn(4, 6))
+health_data = pd.DataFrame(data, index=index, columns=columns)
+print(health_data)
+------------------------------------------
+print(health_data['Guido', 'HR'])
+------------------------------------------
+print(health_data.loc[:, ('Bob', 'HR')])
+------------------------------------------
+idx = pd.IndexSlice
+print(health_data.loc[idx[:, 1], idx[:, 'HR']])
+
+*
+Pandas - series string
+import pandas as pd
+data = ['peter', 'Paul', 'MARY', '15' , '  ' ]
+
+print( pd.Series(data).str.len()) # length
+------------------------------------------
+print( pd.Series(data).str.startswith('p'))# is it start with "p"
+------------------------------------------
+print( pd.Series(data).str.endswith('Y')) #does is end with "r"
+------------------------------------------
+print( pd.Series(data).str.find('t')) # find this letter
+------------------------------------------
+print( pd.Series(data).str.rfind('A'))# find it from right
+------------------------------------------
+print( pd.Series(data).str.rjust(20))# adjust from right
+------------------------------------------
+print( pd.Series(data).str.ljust(50))# adjust from left
+------------------------------------------
+print( pd.Series(data).str.center(10))# make it center 
+------------------------------------------
+print( pd.Series(data).str.zfill(5))# fill zeros
+------------------------------------------
+print( pd.Series(data).str.isupper())# is it all calpital
+------------------------------------------
+print( pd.Series(data).str.islower())# is it lower ? 
+------------------------------------------
+print( pd.Series(data).str.istitle())# is like like "This"
+------------------------------------------
+print( pd.Series(data).str.isspace())# is it all spaces ? 
+------------------------------------------
+print( pd.Series(data).str.isdigit())# is it numbers ?
+------------------------------------------
+print( pd.Series(data).str.isalpha())# is it all letters ?
+------------------------------------------
+print( pd.Series(data).str.isalnum())# is it not got any spaces ? 
+------------------------------------------
+print( pd.Series(data).str.isdecimal())# is it decimals ? 
+------------------------------------------
+print( pd.Series(data).str.isnumeric()) # is it number
+------------------------------------------
+print( pd.Series(data).str.upper())# make it capital
+------------------------------------------
+print( pd.Series(data).str.capitalize())# make it like 'This'
+------------------------------------------
+print( pd.Series(data).str.lower())# make it lower
+------------------------------------------
+print( pd.Series(data).str.swapcase())# switch capital & small
+
+*
+Pandas - datetime
+import pandas as pd
+x = pd.to_datetime("4th of July, 2018")
+------------------------------------------
+print(x)
+------------------------------------------
+y = x + pd.to_timedelta(np.arange(20),'D')
+print(y)
+------------------------------------------
+y = x - pd.to_timedelta(np.arange(20),'D')
+print(y)
+------------------------------------------
+index = pd.DatetimeIndex(['2014-07-04', '2014-08-04',
+                          '2015-07-04','2015-08-04'])
+data = pd.Series([0, 1, 2, 3], index=index)
+------------------------------------------
+print(data)
+------------------------------------------
+print(data['2011-01-01':'2012-12-31'])
+------------------------------------------
+print(data['2012'])
+------------------------------------------
+print(data['2012-08'])
+------------------------------------------
+data = pd.date_range('2011-12-25', '2012-01-08')
+print(data)
+------------------------------------------
+data = pd.date_range('2011-12-25', periods=8)
+print(data)
+------------------------------------------
+data = pd.date_range('2011-12-25', periods=8, freq='H')
+------------------------------------------
+data = pd.timedelta_range(0, periods=10, freq='H')
+------------------------------------------
+data = pd.timedelta_range(0, periods=9, freq="2H30T40S")
+------------------------------------------
+from pandas.tseries.offsets import BDay
+data = pd.date_range('2018-07-01', periods=5, freq=BDay())
+print(data)
+
+*
+Pandas - read files
+import pandas as pd
+df = pd.read_csv('D:\\1.csv')
+print(df.head()) 
+------------------------------------------
+data=pd.read_csv('D:\\1.csv', index_col='SepalWidthCm')
+print(data)
+------------------------------------------
+w = pd.Series({'a':1 ,'b':2 ,'c':3 ,'d':4 ,'e':5})
+x = pd.Series({'a':6 ,'b':7 ,'c':8 ,'d':9 ,'e':10})
+y = pd.Series({'a':11 ,'b':12 ,'c':13 ,'d':14 ,'e':15})
+z = pd.Series({'a':16 ,'b':17 ,'c':18 ,'d':19 ,'e':20})
+grades = pd.DataFrame({'Math':w,'Physics':x,'French':y,'Chemistry':z})
+grades.to_csv('D:\\2.csv')
+------------------------------------------
+grades.to_excel('D:\\1.xls',sheet_name ='Sheet 1')
+------------------------------------------
+grades1 = pd.read_csv('D:\\2.csv')
+grades2 = pd.read_excel('D:\\1.xls')
+------------------------------------------
+filename = 'D:\\2.csv'
+names = ['a', 'b', 'c', 'd', 'e']
+data = pd.read_csv(filename, names=names)
+print(data)
+------------------------------------------
+from pandas import read_csv
+from pandas import set_option
+filename = "D:\\pima-indians-diabetes.csv"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = read_csv(filename, names=names)
+set_option('display.width', 100)
+set_option('precision', 3)
+description = data.describe()
+print(description)
+------------------------------------------
+class_counts = data.groupby('class').size()
+print(class_counts)
+------------------------------------------
+correlations = data.corr(method='pearson')
+print(correlations)
+------------------------------------------
+skew = data.skew()
+print(skew)
+*
+Matplotlib
+import matplotlib.pyplot as plt
+------------------------------------------
+from matplotlib import pyplot as plt
+
+*
+Matplotlib - style
+plt.style.use('      ')
+------------------------------------------
+plt.style.use('bmh')
+------------------------------------------
+plt.style.use('classic')
+------------------------------------------
+plt.style.use('dark_background')
+------------------------------------------
+plt.style.use('fivethirtyeight')
+------------------------------------------
+plt.style.use('ggplot')
+------------------------------------------
+plt.style.use('grayscale')
+------------------------------------------
+plt.style.use('seaborn-bright')
+------------------------------------------
+plt.style.use('seaborn-colorblind')
+------------------------------------------
+plt.style.use('seaborn-dark')
+------------------------------------------
+plt.style.use('seaborn-dark-palette')
+------------------------------------------
+plt.style.use('seaborn-darkgrid')
+------------------------------------------
+plt.style.use('seaborn-deep')
+------------------------------------------
+plt.style.use('seaborn-muted')
+------------------------------------------
+plt.style.use('seaborn-notebook')
+------------------------------------------
+plt.style.use('seaborn-paper')
+------------------------------------------
+plt.style.use('seaborn-pastel')
+------------------------------------------
+plt.style.use('seaborn-poster')
+------------------------------------------
+plt.style.use('seaborn-talk')
+------------------------------------------
+plt.style.use('seaborn-ticks')
+------------------------------------------
+plt.style.use('seaborn-white')
+------------------------------------------
+plt.style.use('seaborn-whitegrid')
+
+*
+Example - LinearRegression one variable
+
+#import libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#read data
+path = 'D:\\z\\1\\ex1data1.txt'
+data = pd.read_csv(path, header=None, names=['Population', 'Profit'])
+
+#show data details
+print('data = \n' ,data.head(10) )
+print('**************************************')
+print('data.describe = \n',data.describe())
+print('**************************************')
+#draw data
+data.plot(kind='scatter', x='Population', y='Profit', figsize=(5,5))
+
+# adding a new column called ones before the data
+data.insert(0, 'Ones', 1)
+print('new data = \n' ,data.head(10) )
+print('**************************************')
+
+# separate X (training data) from y (target variable)
+cols = data.shape[1]
+X = data.iloc[:,0:cols-1]
+y = data.iloc[:,cols-1:cols]
+print('**************************************')
+print('X data = \n' ,X.head(10) )
+print('y data = \n' ,y.head(10) )
+print('**************************************')
+
+# convert from data frames to numpy matrices
+X = np.matrix(X.values)
+y = np.matrix(y.values)
+theta = np.matrix(np.array([0,0]))
+
+print('X \n',X)
+print('X.shape = ' , X.shape)
+print('theta \n',theta)
+print('theta.shape = ' , theta.shape)
+print('y \n',y)
+print('y.shape = ' , y.shape)
+print('**************************************')
+
+# cost function
+def computeCost(X, y, theta):
+    z = np.power(((X * theta.T) - y), 2)
+#    print('z \n',z)
+#    print('m ' ,len(X))
+    return np.sum(z) / (2 * len(X))
+
+print('computeCost(X, y, theta) = ' , computeCost(X, y, theta))
+
+print('**************************************')
+
+# GD function
+def gradientDescent(X, y, theta, alpha, iters):
+    temp = np.matrix(np.zeros(theta.shape))
+    parameters = int(theta.ravel().shape[1])
+    cost = np.zeros(iters)
+    
+    for i in range(iters):
+        error = (X * theta.T) - y
+        
+        for j in range(parameters):
+            term = np.multiply(error, X[:,j])
+            temp[0,j] = theta[0,j] - ((alpha / len(X)) * np.sum(term))
+            
+        theta = temp
+        cost[i] = computeCost(X, y, theta)
+        
+    return theta, cost
+
+
+# initialize variables for learning rate and iterations
+alpha = 0.01
+iters = 1000
+
+# perform gradient descent to "fit" the model parameters
+g, cost = gradientDescent(X, y, theta, alpha, iters)
+
+print('g = ' , g)
+print('cost  = ' , cost[0:50] )
+print('computeCost = ' , computeCost(X, y, g))
+print('**************************************')
+
+# get best fit line
+x = np.linspace(data.Population.min(), data.Population.max(), 100)
+print('x \n',x)
+print('g \n',g)
+
+f = g[0, 0] + (g[0, 1] * x)
+print('f \n',f)
+
+
+# draw the line
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(x, f, 'r', label='Prediction')
+ax.scatter(data.Population, data.Profit, label='Traning Data')
+ax.legend(loc=2)
+ax.set_xlabel('Population')
+ax.set_ylabel('Profit')
+ax.set_title('Predicted Profit vs. Population Size')
+
+
+# draw error graph
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(np.arange(iters), cost, 'r')
+ax.set_xlabel('Iterations')
+ax.set_ylabel('Cost')
+ax.set_title('Error vs. Training Epoch')
+
+*
+Example - LinearRegression Multivariable
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+path = 'D:\\z\\1\\ex1data1.txt'
+data = pd.read_csv(path, header=None, names=['Population', 'Profit'])
+
+def computeCost(X, y, theta):
+    inner = np.power(((X * theta.T) - y), 2)
+    return np.sum(inner) / (2 * len(X))
+
+data.insert(0, 'Ones', 1)
+
+cols = data.shape[1]
+X = data.iloc[:,0:cols-1]
+y = data.iloc[:,cols-1:cols]
+
+
+X = np.matrix(X.values)
+y = np.matrix(y.values)
+theta = np.matrix(np.array([0,0]))
+
+def gradientDescent(X, y, theta, alpha, iters):
+    temp = np.matrix(np.zeros(theta.shape))
+    parameters = int(theta.ravel().shape[1])
+    cost = np.zeros(iters)
+    
+    for i in range(iters):
+        error = (X * theta.T) - y
+        
+        for j in range(parameters):
+            term = np.multiply(error, X[:,j])
+            temp[0,j] = theta[0,j] - ((alpha / len(X)) * np.sum(term))
+            
+        theta = temp
+        cost[i] = computeCost(X, y, theta)
+        
+    return theta, cost
+
+
+#read data    
+path2 = 'D:\\z\\1\\ex1data2.txt'
+data2 = pd.read_csv(path2, header=None, names=['Size', 'Bedrooms', 'Price'])
+
+#show data
+print('data = ')
+print(data2.head(10) )
+print()
+print('data.describe = ')
+print(data2.describe())
+
+# rescaling data
+data2 = (data2 - data2.mean()) / data2.std()
+
+print()
+print('data after normalization = ')
+print(data2.head(10) )
+
+
+# add ones column
+data2.insert(0, 'Ones', 1)
+
+
+# separate X (training data) from y (target variable)
+cols = data2.shape[1]
+X2 = data2.iloc[:,0:cols-1]
+y2 = data2.iloc[:,cols-1:cols]
+
+print('**************************************')
+print('X2 data = \n' ,X2.head(10) )
+print('y2 data = \n' ,y2.head(10) )
+print('**************************************')
+
+# convert to matrices and initialize theta
+X2 = np.matrix(X2.values)
+y2 = np.matrix(y2.values)
+theta2 = np.matrix(np.array([0,0,0]))
+
+
+print('X2 \n',X2)
+print('X2.shape = ' , X2.shape)
+print('**************************************')
+print('theta2 \n',theta2)
+print('theta2.shape = ' , theta2.shape)
+print('**************************************')
+print('y2 \n',y2)
+print('y2.shape = ' , y2.shape)
+print('**************************************')
+
+# initialize variables for learning rate and iterations
+alpha = 0.1
+iters = 100
+
+# perform linear regression on the data set
+g2, cost2 = gradientDescent(X2, y2, theta2, alpha, iters)
+
+# get the cost (error) of the model
+thiscost = computeCost(X2, y2, g2)
+
+
+print('g2 = ' , g2)
+print('cost2  = ' , cost2[0:50] )
+print('computeCost = ' , thiscost)
+print('**************************************')
+
+# get best fit line for Size vs. Price
+
+x = np.linspace(data2.Size.min(), data2.Size.max(), 100)
+print('x \n',x)
+print('g \n',g2)
+
+f = g2[0, 0] + (g2[0, 1] * x)
+print('f \n',f)
+
+# draw the line for Size vs. Price
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(x, f, 'r', label='Prediction')
+ax.scatter(data2.Size, data2.Price, label='Traning Data')
+ax.legend(loc=2)
+ax.set_xlabel('Size')
+ax.set_ylabel('Price')
+ax.set_title('Size vs. Price')
+
+# get best fit line for Bebdrooms vs. Price
+x = np.linspace(data2.Bedrooms.min(), data2.Bedrooms.max(), 100)
+print('x \n',x)
+print('g \n',g2)
+
+f = g2[0, 0] + (g2[0, 1] * x)
+print('f \n',f)
+
+# draw the line  for Bebdrooms vs. Price
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(x, f, 'r', label='Prediction')
+ax.scatter(data2.Bedrooms, data2.Price, label='Traning Data')
+ax.legend(loc=2)
+ax.set_xlabel('Bedrooms')
+ax.set_ylabel('Price')
+ax.set_title('Size vs. Price')
+
+# draw error graph
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(np.arange(iters), cost2, 'r')
+ax.set_xlabel('Iterations')
+ax.set_ylabel('Cost')
+ax.set_title('Error vs. Training Epoch')
+
+*
+Example - LogisticRegression (Classiication)
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+path = 'D:\\z\\1\\ex2data1.txt'
+
+data = pd.read_csv(path, header=None, names=['Exam 1', 'Exam 2', 'Admitted'])
+
+print('data = ')
+print(data.head(10) )
+print()
+print('data.describe = ')
+print(data.describe())
+
+
+positive = data[data['Admitted'].isin([1])]
+negative = data[data['Admitted'].isin([0])]
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.scatter(positive['Exam 1'], positive['Exam 2'], s=50, c='b', marker='o', label='Admitted')
+ax.scatter(negative['Exam 1'], negative['Exam 2'], s=50, c='r', marker='x', label='Not Admitted')
+ax.legend()
+ax.set_xlabel('Exam 1 Score')
+ax.set_ylabel('Exam 2 Score')
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+
+nums = np.arange(-10, 10, step=1)
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(nums, sigmoid(nums), 'r')
+
+def cost(theta, X, y):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    first = np.multiply(-y, np.log(sigmoid(X * theta.T)))
+    second = np.multiply((1 - y), np.log(1 - sigmoid(X * theta.T)))
+    return np.sum(first - second) / (len(X))
+
+# add a ones column - this makes the matrix multiplication work out easier
+data.insert(0, 'Ones', 1)
+
+# set X (training data) and y (target variable)
+cols = data.shape[1]
+X = data.iloc[:,0:cols-1]
+y = data.iloc[:,cols-1:cols]
+
+# convert to numpy arrays and initalize the parameter array theta
+X = np.array(X.values)
+y = np.array(y.values)
+theta = np.zeros(3)
+
+print()
+print('X.shape = ' , X.shape)
+print('theta.shape = ' , theta.shape)
+print('y.shape = ' , y.shape)
+
+thiscost = cost(theta, X, y)
+print()
+print('cost = ' , thiscost)
+
+def gradient(theta, X, y):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    
+    parameters = int(theta.ravel().shape[1])
+    grad = np.zeros(parameters)
+    
+    error = sigmoid(X * theta.T) - y
+    
+    for i in range(parameters):
+        term = np.multiply(error, X[:,i])
+        grad[i] = np.sum(term) / len(X)
+    
+    return grad
+
+import scipy.optimize as opt
+result = opt.fmin_tnc(func=cost, x0=theta, fprime=gradient, args=(X, y))
+
+
+
+costafteroptimize = cost(result[0], X, y)
+print()
+print('cost after optimize = ' , costafteroptimize)
+print()
+
+def predict(theta, X):
+    probability = sigmoid(X * theta.T)
+    return [1 if x >= 0.5 else 0 for x in probability]
+
+theta_min = np.matrix(result[0])
+predictions = predict(theta_min, X)
+correct = [1 if ((a == 1 and b == 1) or (a == 0 and b == 0)) else 0 for (a, b) in zip(predictions, y)]
+accuracy = (sum(map(int, correct)) % len(correct))
+print ('accuracy = {0}%'.format(accuracy))
+
+*
+Example - LogisticRegression (Classiication) with regularization
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.optimize as opt
+
+
+path = 'D:\\z\\1\\ex2data2.txt'
+
+data = pd.read_csv(path, header=None, 
+                   names=['Test 1', 'Test 2', 'Accepted'])
+
+print('data = ')
+print(data.head(10) )
+print('................................................')
+print('data.describe = ')
+print(data.describe())
+
+positive = data[data['Accepted'].isin([1])]
+negative = data[data['Accepted'].isin([0])]
+
+#
+#print('................................................')
+#print('positive data')
+#print(positive)
+#print('................................................')
+#print('negative data')
+#print(negative)
+#print('................................................')
+#
+
+
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.scatter(positive['Test 1'], positive['Test 2'],
+           s=50, c='g', marker='o', label='Accepted')
+ax.scatter(negative['Test 1'], negative['Test 2'],
+           s=50, c='r', marker='x', label='Rejected')
+ax.legend()
+ax.set_xlabel('Test 1 Score')
+ax.set_ylabel('Test 2 Score')
+
+
+print('................................................')
+
+
+
+degree = 5
+
+x1 = data['Test 1']
+x2 = data['Test 2']
+
+print('x1 \n' ,x1.head(10))
+print('................................................')
+print('x2 \n' ,x2.head(10))
+
+print('................................................')
+
+data.insert(3, 'Ones', 1)   # adding x0
+
+print('data \n' , data.head(10))
+print('................................................')
+
+
+
+'''
+x1 + x1^2 + x1x2 + x1^3 + x1^2 x2 + x1 x2^2 + x1^4 + x1^3 x2 + x1^2 x2^2 + x1 x2^3
+
+
+F10 = x1
+
+F20 = x1^2
+F21 = x1 x2
+
+F30 = x1^3
+F31 = x1^2 x2
+F32 = x1 x2^2
+
+F40 = x1^4
+F41 = x1^3 x2
+F42 = x1^2 x2^2
+F43 = x1 x2^3 
+
+'''
+for i in range(1, degree): # 1,2,3,4
+    for j in range(0, i):  # 0 , 1 , 2 ,2
+        data['F' + str(i) + str(j)] = np.power(x1, i-j) * np.power(x2, j) # i=3 , j=2
+
+data.drop('Test 1', axis=1, inplace=True)
+data.drop('Test 2', axis=1, inplace=True)
+
+print('data \n' , data.head(10))
+
+print('................................................')
+
+
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+
+def costReg(theta, X, y, lr ):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    first = np.multiply(-y, np.log(sigmoid(X * theta.T)))
+    second = np.multiply((1 - y), np.log(1 - sigmoid(X * theta.T)))
+    reg = (lr / 2 * len(X)) * np.sum(np.power(theta[:,1:theta.shape[1]], 2))
+    
+     
+    return np.sum(first - second) / (len(X)) + reg
+
+
+
+
+def gradientReg(theta, X, y, learningRate):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    
+    parameters = int(theta.ravel().shape[1])
+    grad = np.zeros(parameters)
+    
+    error = sigmoid(X * theta.T) - y
+    
+    for i in range(parameters):
+        term = np.multiply(error, X[:,i])
+        
+        if (i == 0):
+            grad[i] = np.sum(term) / len(X)
+        else:
+            grad[i] =(np.sum(term)/len(X))+((learningRate/len(X))*theta[:,i])
+    
+    return grad
+
+# set X and y (remember from above that we moved the label to column 0)
+cols = data.shape[1]
+print('cols = ' , cols)
+print('................................................')
+
+X2 = data.iloc[:,1:cols]
+print('X2 = ')
+print(X2.head(10))
+print('................................................')
+
+y2 = data.iloc[:,0:1]
+print('y2 = ')
+print(y2.head(10))
+print('................................................')
+
+# convert to numpy arrays and initalize the parameter array theta
+X2 = np.array(X2.values)
+y2 = np.array(y2.values)
+theta2 = np.zeros(X2.shape[1])
+
+print('theta 2 = ' , theta2)
+print('................................................')
+
+learningRate = 0.00001
+
+
+rcost = costReg(theta2, X2, y2, learningRate)
+print()
+print('regularized cost = ' , rcost)
+print()
+
+
+
+result = opt.fmin_tnc(func=costReg, x0=theta2, fprime=gradientReg,
+                      args=(X2, y2, learningRate))
+print( 'result = ' , result )
+print()
+
+def predict(theta, X):
+    probability = sigmoid(X * theta.T)
+    return [1 if x >= 0.5 else 0 for x in probability]
+
+theta_min = np.matrix(result[0])
+predictions = predict(theta_min, X2)
+correct = [1 if ((a == 1 and b == 1) or (a == 0 and b == 0)) else 0 for (a, b) in zip(predictions, y2)]
+accuracy = (sum(map(int, correct)) % len(correct))
+print ('accuracy = {0}%'.format(accuracy))
+
+*
+Example - LogisticRegression (Classiication) with MultiVariable
+import numpy as np
+from scipy.io import loadmat
+
+
+data = loadmat('D:\\z\\1\\ex3data1.mat')
+
+print(data) 
+print(data['X']) 
+print(data['y'])
+print('X Shape = ' ,  data['X'].shape) 
+print('Y Shape = ', data['y'].shape)
+
+print(data['X'][0]) 
+print(data['X'][0][155]) 
+
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+def cost(theta, X, y, learningRate):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    first = np.multiply(-y, np.log(sigmoid(X * theta.T)))
+    second = np.multiply((1 - y), np.log(1 - sigmoid(X * theta.T)))
+    reg = (learningRate / 2 * len(X)) * np.sum(np.power(theta[:,1:theta.shape[1]], 2))
+    return np.sum(first - second) / (len(X)) + reg
+
+
+def gradient_with_loop(theta, X, y, learningRate):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    
+    parameters = int(theta.ravel().shape[1])
+    grad = np.zeros(parameters)
+    
+    error = sigmoid(X * theta.T) - y
+    
+    for i in range(parameters):
+        term = np.multiply(error, X[:,i])
+        
+        if (i == 0):
+            grad[i] = np.sum(term) / len(X)
+        else:
+            grad[i] = (np.sum(term) / len(X)) + ((learningRate / len(X)) * theta[:,i])
+    
+    return grad
+
+def gradient(theta, X, y, learningRate):
+    theta = np.matrix(theta)
+    X = np.matrix(X)
+    y = np.matrix(y)
+    
+    parameters = int(theta.ravel().shape[1])
+    error = sigmoid(X * theta.T) - y
+    
+    grad = ((X.T * error) / len(X)).T + ((learningRate / len(X)) * theta)
+    
+    # intercept gradient is not regularized
+    grad[0, 0] = np.sum(np.multiply(error, X[:,0])) / len(X)
+    
+    return np.array(grad).ravel()
+
+from scipy.optimize import minimize
+
+def one_vs_all(X, y, num_labels, learning_rate):
+    rows = X.shape[0] #5000
+    params = X.shape[1] #400
+    
+    # k X (n + 1) array for the parameters of each of the k classifiers
+    all_theta = np.zeros((num_labels, params + 1))
+    
+    print('all_theta shape ' , all_theta.shape)
+    # insert a column of ones at the beginning for the intercept term
+    X = np.insert(X, 0, values=np.ones(rows), axis=1)
+    print('X shape ' , X.shape)
+    
+    # labels are 1-indexed instead of 0-indexed
+    for i in range(1, num_labels + 1):
+        theta = np.zeros(params + 1)
+        y_i = np.array([1 if label == i else 0 for label in y])
+        y_i = np.reshape(y_i, (rows, 1))
+        
+        # minimize the objective function
+        fmin = minimize(fun=cost, x0=theta, args=(X, y_i, learning_rate), method='TNC', jac=gradient)
+        all_theta[i-1,:] = fmin.x
+    
+    return all_theta
+
+rows = data['X'].shape[0]
+params = data['X'].shape[1]
+
+print('rows = ' ,rows)
+print('params = ' , params)
+
+
+all_theta = np.zeros((10, params + 1))
+
+print('all_theta \n' , all_theta)
+print('all_theta shape \n' , all_theta.shape)
+
+
+X = np.insert(data['X'], 0, values=np.ones(rows), axis=1)
+
+
+print(X) 
+print('X Shape = ' ,  X.shape) 
+
+theta = np.zeros(params + 1)
+
+print('theta \n' , theta ) 
+
+
+y_0 = np.array([1 if label == 0 else 0 for label in data['y']])
+
+print('y_0')
+print(y_0.shape)
+print(y_0)
+
+y_0 = np.reshape(y_0, (rows, 1))
+
+
+print('y_0')
+print(y_0.shape)
+print(y_0)
+
+print()
+print('X.shape = ',X.shape)
+print()
+print('y.shape = ',y_0.shape)
+print()
+print('theta.shape = ',theta.shape)
+print()
+print('all_theta.shape = ',all_theta.shape)
+
+print()
+print('data array = ' , np.unique(data['y']))
+
+print()
+
+
+all_theta = one_vs_all(data['X'], data['y'], 1, 1)
+
+print('Theta shape =   ' , all_theta.shape)
+print('Theta = ')
+print(all_theta)
+
+def predict_all(X, all_theta):
+    rows = X.shape[0]
+    params = X.shape[1]
+    num_labels = all_theta.shape[0]
+    
+    # same as before, insert ones to match the shape
+    X = np.insert(X, 0, values=np.ones(rows), axis=1)
+    
+    # convert to matrices
+    X = np.matrix(X)
+    all_theta = np.matrix(all_theta)
+    
+    # compute the class probability for each class on each training instance
+    h = sigmoid(X * all_theta.T)
+    
+    # create array of the index with the maximum probability
+    h_argmax = np.argmax(h, axis=1)
+    
+    # because our array was zero-indexed we need to add one for the true label prediction
+    h_argmax = h_argmax + 1
+    
+    return h_argmax
+
+y_pred = predict_all(data['X'], all_theta)
+correct = [1 if a == b else 0 for (a, b) in zip(y_pred, data['y'])]
+accuracy = (sum(map(int, correct)) / float(len(correct)))
+print ('accuracy = {0}%'.format(accuracy * 100))
+
+*
+Example - Neural Network  - 1
+import numpy as np
+neuron = 4
+
+def sigmoid(x):
+    return 1.0/(1+ np.exp(-x))
+
+def sigmoid_derivative(x):
+    return x * (1.0 - x)
+
+class NeuralNetwork:
+    def __init__(self, x, y):
+        self.input      = x
+        print('inputs \n' , self.input)
+        print()
+        self.weights1   = np.random.rand(self.input.shape[1],neuron) 
+        print('weights1 \n',self.weights1)
+        print()
+        self.weights2   = np.random.rand(neuron,1)                 
+        print('weights2 \n',self.weights2)
+        print()
+        self.y          = y
+        print('y \n',self.y)
+        print()
+        self.output     = np.zeros(self.y.shape) # y hat
+        print('output \n',self.output)
+        print()
+        
+    def feedforward(self):
+        self.layer1 = sigmoid(np.dot(self.input, self.weights1))
+#        print('layer 1 \n',self.layer1)
+#        print()        
+        self.output = sigmoid(np.dot(self.layer1, self.weights2))
+#        print('output \n',self.output)
+#        print()
+        
+    def backprop(self):
+        # application of the chain rule to find derivative of the loss function with respect to weights2 and weights1
+        d_weights2 = np.dot(self.layer1.T, (2*(self.y - self.output) * sigmoid_derivative(self.output)))
+#        print('d_weights2  \n',d_weights2  )
+#        print()        
+        d_weights1 = np.dot(self.input.T,
+                            (np.dot(2*(self.y - self.output) * sigmoid_derivative(self.output),
+                                    self.weights2.T) * sigmoid_derivative(self.layer1)))
+#        print('d_weights1 \n',d_weights1)
+#        print()        
+
+        # update the weights with the derivative (slope) of the loss function
+        self.weights1 += d_weights1
+        self.weights2 += d_weights2
+
+
+X = np.array([[0,0,1],
+              [0,1,1],
+              [1,0,1],
+              [1,1,1]])
+
+    
+    
+y = np.array([[0],
+              [1],
+              [1],
+              [0]])
+
+    
+nn = NeuralNetwork(X,y)
+
+for i in range(20000):
+    nn.feedforward()
+    nn.backprop()
+#    print('--------------------------------')
+#
+print(nn.output)
+*
+Example - Neural Network  - 2
+import numpy as np
+
+class Neural_Network(object):
+  def __init__(self):
+  #parameters
+    self.inputSize = 2
+    self.outputSize = 1
+    self.hiddenSize = 3
+
+  #weights
+    self.W1 = np.random.randn(self.inputSize, self.hiddenSize) # (2x3) weight matrix from input to hidden layer
+#    print(self.W1)
+    self.W2 = np.random.randn(self.hiddenSize, self.outputSize) # (3x1) weight matrix from hidden to output layer
+#    print(self.W2)
+    
+    
+  def forward(self, X):
+    #forward propagation through our network
+    self.z = np.dot(X, self.W1) # dot product of X (input) and first set of 3x2 weights
+    self.z2 = self.sigmoid(self.z) # activation function
+    self.z3 = np.dot(self.z2, self.W2) # dot product of hidden layer (z2) and second set of 3x1 weights
+    o = self.sigmoid(self.z3) # final activation function
+    return o
+
+  def sigmoid(self, s):
+    # activation function
+    return 1/(1+np.exp(-s))
+
+  def sigmoidPrime(self, s):
+    #derivative of sigmoid
+    return s * (1 - s)
+
+  def backward(self, X, y, o):
+    # backward propagate through the network
+    self.o_error = y - o # error in output
+    self.o_delta = self.o_error*self.sigmoidPrime(o) # applying derivative of sigmoid to error
+
+    self.z2_error = self.o_delta.dot(self.W2.T) # z2 error: how much our hidden layer weights contributed to output error
+    self.z2_delta = self.z2_error*self.sigmoidPrime(self.z2) # applying derivative of sigmoid to z2 error
+
+    self.W1 += X.T.dot(self.z2_delta) # adjusting first set (input --> hidden) weights
+    self.W2 += self.z2.T.dot(self.o_delta) # adjusting second set (hidden --> output) weights
+
+  def train(self, X, y):
+    o = self.forward(X)
+    self.backward(X, y, o)
+
+  def saveWeights(self):
+    np.savetxt("w1.txt", self.W1, fmt="%s")
+    np.savetxt("w2.txt", self.W2, fmt="%s")
+
+  def predict(self):
+    print ("Predicted data based on trained weights: ")
+    print ("Input (scaled): \n" + str(xPredicted))
+    print ("Output: \n" + str(self.forward(xPredicted)))
+
+
+
+# X = (hours studying, hours sleeping), y = score on test, xPredicted = 4 hours studying & 8 hours sleeping (input data for prediction)
+X = np.array(([2, 9], [1, 5], [3, 6]), dtype=float)
+y = np.array(([92], [86], [89]), dtype=float)
+xPredicted = np.array(([4,8]), dtype=float)
+
+# scale units
+#print(X)
+X = X/np.amax(X, axis=0) # maximum of X array
+#print(X)
+
+#print(xPredicted)
+xPredicted = xPredicted/np.amax(xPredicted, axis=0) # maximum of xPredicted (our input data for the prediction)
+#print(xPredicted)
+y = y/100 # max test score is 100
+NN = Neural_Network()
+for i in range(10): # trains the NN 1,000 times
+  print ("# " + str(i) + "\n")
+  print ("Input (scaled): \n" + str(X))
+  print ("Actual Output: \n" + str(y))
+  print ("Predicted Output: \n" + str(NN.forward(X)))
+  print ("Loss: \n" + str(np.mean(np.square(y - NN.forward(X)))) )# mean sum squared loss
+  print ("\n")
+  NN.train(X, y)
+
+NN.saveWeights()
+NN.predict()
+
+*
+Example - SVM
+import pandas as pd
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_context('notebook')
+sns.set_style('white')
+
+from scipy.io import loadmat
+from sklearn import svm
+
+pd.set_option('display.notebook_repr_html', False)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 150)
+pd.set_option('display.max_seq_items', None)
+
+#---------------------------------------------------------
+# functions
+def plotData(X, y ,S):
+    pos = (y == 1).ravel()
+    neg = (y == 0).ravel()
+    
+    plt.scatter(X[pos,0], X[pos,1], s=S, c='b', marker='+', linewidths=1)
+    plt.scatter(X[neg,0], X[neg,1], s=S, c='r', marker='o', linewidths=1)
+    
+
+def plot_svc(svc, X, y, h=0.02, pad=0.25):
+    x_min, x_max = X[:, 0].min()-pad, X[:, 0].max()+pad
+    y_min, y_max = X[:, 1].min()-pad, X[:, 1].max()+pad
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+    Z = svc.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+    plt.contourf(xx, yy, Z, cmap=plt.cm.Paired, alpha=0.2)
+
+    plotData(X, y,6)
+    #plt.scatter(X[:,0], X[:,1], s=70, c=y, cmap=mpl.cm.Paired)
+    # Support vectors indicated in plot by vertical lines
+    sv = svc.support_vectors_
+    plt.scatter(sv[:,0], sv[:,1], c='y', marker='|', s=100, linewidths='5')
+    plt.xlim(x_min, x_max)
+    plt.ylim(y_min, y_max)
+    plt.xlabel('X1')
+    plt.ylabel('X2')
+    plt.show()
+    print('Number of support vectors: ', svc.support_.size)
+
+
+# exapmle 1 , Linear SVM
+
+data1 = loadmat('d:\\z\\1\\ex6data1.mat')
+#print(data1)    
+
+y1 = data1['y']
+X1 = data1['X']
+
+#print('X1:', X1.shape)
+#print('y1:', y1.shape)
+
+#data before classifying
+#plotData(X1,y1,50)
+
+# small C ==  UF
+#clf = svm.SVC(C=1.0, kernel='linear')
+#clf.fit(X1, y1.ravel())
+#plot_svc(clf, X1, y1)
+
+
+# big C ==  OF
+#clf.set_params(C=100)
+#clf.fit(X1, y1.ravel())
+#plot_svc(clf, X1, y1)
+
+# Example 2  : Nonlinear SVM
+   
+data2 = loadmat('d:\\z\\1\\ex6data2.mat')
+#print(data2.keys())
+
+y2 = data2['y']
+X2 = data2['X']
+
+#print('X2:', X2.shape)
+#print('y2:', y2.shape)
+#
+#plotData(X2, y2,8)
+
+#apply SVM
+#clf2 = svm.SVC(C=50, kernel='rbf', gamma=6)
+#clf2.fit(X2, y2.ravel())
+#plot_svc(clf2, X2, y2)
+
+ 
+# Example 3  : Nonlinear SVM
+
+
+data3 = loadmat('d:\\z\\1\\ex6data3.mat')
+#print(data3.keys())
+
+y3 = data3['y']
+X3 = data3['X']
+
+#print('X3:', X3.shape)
+#print('y3:', y3.shape)
+#
+#plotData(X3, y3,30)
+#
+#
+#clf3 = svm.SVC(C=1.0, kernel='poly', degree=3, gamma=10)
+#clf3.fit(X3, y3.ravel())
+#plot_svc(clf3, X3, y3)
+
+#  Training
+
+spam_train = loadmat('d:\\z\\1\\spamTrain.mat')
+spam_test = loadmat('d:\\z\\1\\spamTest.mat')
+
+#print(spam_train)
+#print(spam_test)
+
+
+X = spam_train['X']
+Xtest = spam_test['Xtest']
+y = spam_train['y'].ravel()
+ytest = spam_test['ytest'].ravel()
+#
+print(X.shape, y.shape, Xtest.shape, ytest.shape)
+#
+svc = svm.SVC()
+svc.fit(X, y)
+
+# Testing
+print('Test accuracy = {0}%'.format(np.round(svc.score(Xtest, ytest) * 100, 2)))
+
+*
+Example - PCA
+#import numpy as np
+#import pandas as pd
+#import matplotlib.pyplot as plt
+#import seaborn as sb
+#from scipy.io import loadmat
+
+#  select random points
+#def init_centroids(X, k):
+#    m, n = X.shape
+#    centroids = np.zeros((k, n))
+#    idx = np.random.randint(0, m, k)
+#    
+#    for i in range(k):
+#        centroids[i,:] = X[idx[i],:]
+#    
+#    return centroids
+#
+#
+## centroid function
+#def find_closest_centroids(X, centroids):
+#    m = X.shape[0]
+#    k = centroids.shape[0]
+#    idx = np.zeros(m)   
+#    
+#    for i in range(m):
+#        min_dist = 1000000
+#        for j in range(k):
+#            dist = np.sum((X[i,:] - centroids[j,:]) ** 2)
+#            if dist < min_dist:
+#                min_dist = dist
+#                idx[i] = j
+#    
+#    return idx
+#
+## centroid maker
+#def compute_centroids(X, idx, k):
+#    m, n = X.shape
+#    centroids = np.zeros((k, n))
+#    
+#    for i in range(k):
+#        indices = np.where(idx == i)
+#        centroids[i,:] = (np.sum(X[indices,:], axis=1) / len(indices[0])).ravel()
+#    
+#    return centroids
+#
+## k means function
+#def run_k_means(X, initial_centroids, max_iters):
+#    m, n = X.shape
+#    k = initial_centroids.shape[0]
+#    idx = np.zeros(m)
+#    centroids = initial_centroids
+#    
+#    for i in range(max_iters):
+#        idx = find_closest_centroids(X, centroids)
+#        centroids = compute_centroids(X, idx, k)
+#    
+#    return idx, centroids
+#
+#
+#def pca(X):
+#    # normalize the features
+#    X = (X - X.mean()) / X.std()
+#    
+#    # compute the covariance matrix
+#    X = np.matrix(X)
+#    cov = (X.T * X) / X.shape[0]
+##    print('cov \n', cov)
+##    print()
+#    # perform SVD
+#    U, S, V = np.linalg.svd(cov) # singular value decomposition
+#    
+#    return U, S, V
+#
+#def project_data(X, U, k):
+#    U_reduced = U[:,:k]
+#    return np.dot(X, U_reduced)
+#def recover_data(Z, U, k):
+#    U_reduced = U[:,:k]
+#    return np.dot(Z, U_reduced.T)
+
+
+#load data
+
+#data = loadmat('D:\\z\\1\\ex7data2.mat')
+#print(data)
+#print(data['X'])
+#print(data['X'].shape)
+
+# classify points 
+#X = data['X']
+#initial_centroids = np.array([[3, 3], [6, 2], [8, 5]])
+#initial_centroids = np.array([[8, 0], [8, 6], [0, 3]])
+#initial_centroids =  init_centroids(X, 3)
+#print(initial_centroids )
+ 
+#idx = find_closest_centroids(X, initial_centroids)
+#print(idx)
+
+#calculate new centroid
+#c = compute_centroids(X, idx, 3)
+#print(c)
+
+#for x in range(6):
+
+    # apply k means 
+#    idx, centroids = run_k_means(X, initial_centroids, x)
+    #print(idx)
+#    print()
+#    print(centroids )
+#    
+#    # draw it
+#    cluster1 = X[np.where(idx == 0)[0],:]
+#    cluster2 = X[np.where(idx == 1)[0],:]
+#    cluster3 = X[np.where(idx == 2)[0],:]
+#    
+#    fig, ax = plt.subplots(figsize=(9,6))
+#    ax.scatter(cluster1[:,0], cluster1[:,1], s=30, color='r', label='Cluster 1')
+#    ax.scatter(centroids[0,0],centroids[0,1],s=300, color='r')
+#    
+#    ax.scatter(cluster2[:,0], cluster2[:,1], s=30, color='g', label='Cluster 2')
+#    ax.scatter(centroids[1,0],centroids[1,1],s=300, color='g')   
+#    ax.scatter(cluster3[:,0], cluster3[:,1], s=30, color='b', label='Cluster 3')
+#    ax.scatter(centroids[2,0],centroids[2,1],s=300, color='b')
+#    
+#    ax.legend()
+
+# we need to compress the image 
+#image_data = loadmat('D:\\z\\1\\bird_small.mat')
+#print(image_data)
+
+#A = image_data['A']
+#print(A.shape)
+#plt.imshow(A)
+
+# normalize value ranges
+#A = A / 255.
+
+# reshape the array
+#X = np.reshape(A, (A.shape[0] * A.shape[1], A.shape[2]))
+#print(X.shape)
+# randomly initialize the centroids
+#initial_centroids = init_centroids(X, 16)
+#print(initial_centroids)
+
+## run the algorithm
+#idx, centroids = run_k_means(X, initial_centroids, 10)
+#
+## get the closest centroids one last time
+#idx = find_closest_centroids(X, centroids)
+#
+## map each pixel to the centroid value
+#X_recovered = centroids[idx.astype(int),:]
+#
+## reshape to the original dimensions
+#X_recovered = np.reshape(X_recovered, (A.shape[0], A.shape[1], A.shape[2]))
+#
+#plt.imshow(X_recovered)
+
+# Apply PCA
+#data = loadmat('D:\\z\\1\\ex7data1.mat')
+#X = data['X']
+#print(X.shape)
+#print(X)
+#print()
+
+#fig, ax = plt.subplots(figsize=(9,6))
+#ax.scatter(X[:, 0], X[:, 1])
+#U, S, V = pca(X)
+#print(U)
+#print()
+#print(S)
+#print()
+#print(V)
+#Z = project_data(X, U, 1)
+#print(Z)
+
+#X_recovered = recover_data(Z, U, 1)
+#print(X_recovered)
+#print(X_recovered.shape)
+
+# Apply PCA on faces
+#faces = loadmat('D:\\z\\1\\ex7faces.mat')
+#X = faces['X']
+#print(X.shape)
+#plt.imshow(X)
+
+#show one face
+#face = np.reshape(X[41,:], (32, 32))
+#plt.imshow(face)
+#U, S, V = pca(X)
+#Z = project_data(X, U, 100)
+#
+#X_recovered = recover_data(Z, U, 100)
+#face = np.reshape(X_recovered[41,:], (32, 32))
+#plt.imshow(face)
+
+*
+Matplotlib - plot 1
+import matplotlib.pyplot as plt
+a = ( 1,2,3,6,5,8,7,4)
+plt.plot(a)
+------------------------------------------
+a = (1,2,3,4,5,6)
+b = (3,9,10,12,16,18)
+plt.plot(a,b)
+------------------------------------------
+x = np.linspace(0, 10) 
+y = np.sin(x) 
+plt.plot(x, y)
+------------------------------------------
+plt.ylabel('Time')
+plt.xlabel('Work')
+------------------------------------------
+ax = plt.axes()
+ax.set_xlabel('Time')
+ax.set_ylabel('Work')
+------------------------------------------
+ax = plt.axes()
+ax.set(xlabel='Time', ylabel='Work' )
+plt.plot(a,b,marker='o')
+------------------------------------------
+plt.plot(a,b,marker='o',markersize=11)
+------------------------------------------
+plt.plot(a,b,color='blue',marker='o',markersize=11)
+------------------------------------------
+plt.plot(a,b,color='blue',marker='o',markersize=11) #color name
+plt.plot(a,b,color='g',marker='o',markersize=11) #color litter
+plt.plot(a,b,color='0.75',marker='o',markersize=11) # its degree from B&W
+plt.plot(a,b,color='#FFDD44',marker='o',markersize=11) # its code
+plt.plot(a,b,color=(1.0,0.2,0.3),marker='o',markersize=11) #its RGB degrees
+plt.plot(a,b,color='chartreuse',marker='o',markersize=11) #its name in html
+------------------------------------------
+plt.title('time/work consumption')
+------------------------------------------
+ax.set_title('time/work consumption')
+ax.set(title='time/work consumption')
+------------------------------------------
+plt.plot(x,x,'r--',x,x**2,'bo',x,x**3,'g^')
+plt.plot(x,y,'b',x,z,'g',x,w,'r')
+------------------------------------------
+plt.errorbar(x, y, yerr=dy, fmt='.b');
+------------------------------------------
+plt.errorbar(x, y, yerr=dy, fmt='.r');
+------------------------------------------
+plt.errorbar(x, y, yerr=dy, fmt='o',color='black', ecolor='lightgray',elinewidth=3, capsize=0)
+------------------------------------------
+plt.errorbar(x, y, xerr=dy, fmt='.r')
+
+*
+Matplotlib - plot 2
+def p1(x):  return x**4 - 4*x**2 + 3*x
+def p2(x):  return np.sin(10*x)*10
+x = np.linspace(-3,3,1000)
+plt.plot(x,p1(x),x,p2(x))
+------------------------------------------
+plt.plot(x, x + 0, linestyle='solid')
+plt.plot(x, x + 1, linestyle='-')
+------------------------------------------
+plt.plot(x, x + 4, linestyle='dashed')
+plt.plot(x, x + 5, linestyle='--')
+------------------------------------------
+plt.plot(x, x + 8, linestyle='dashdot')
+plt.plot(x, x + 9, linestyle='-.')
+------------------------------------------
+plt.plot(x, x + 12, linestyle='dotted')
+plt.plot(x, x + 13, linestyle=':')
+------------------------------------------
+plt.plot(x,x+0,'b--')
+plt.plot(x,x+3,'g-')
+plt.plot(x,x+6,'r-.')
+plt.plot(x,x+9,'y:')
+------------------------------------------
+plt.plot(x,x+0,'b-',linewidth = 1)
+plt.plot(x,x+3,'b-',linewidth = 5)
+plt.plot(x,x+6,'b-',linewidth = 11)
+plt.plot(x,x+9,'b-',linewidth = 20)
+------------------------------------------
+plt.plot(x, x + 0, color = 'b')
+plt.plot(x, x + 2, color = 'g')
+plt.plot(x, x + 4, color = 'y')
+plt.plot(x, x + 6, color = 'r')
+plt.plot(x, x + 8, color = 'c')
+plt.plot(x, x + 10, color = 'm')
+plt.plot(x, x + 12, color = 'k')
+plt.plot(x, x + 14, color = 'w')
+------------------------------------------
+plt.plot(x, x + 0, '-')
+plt.plot(x, x + 5, 'o')
+plt.plot(x, x + 10, '-o')
+------------------------------------------
+plt.plot(x,x,'--')
+plt.plot(x,x+3,'o')
+plt.plot(x,x+6,'^')
+plt.plot(x,x+9,'.')
+------------------------------------------
+plt.plot(x,x+9,'>')
+plt.plot(x,x+6,'v')
+plt.plot(x,x+3,'o')
+plt.plot(x,x,',')
+------------------------------------------
+plt.plot(x,x+12,'<')
+plt.plot(x,x+9,'1')
+plt.plot(x,x+6,'2')
+plt.plot(x,x+3,'3')
+plt.plot(x,x,'4')
+------------------------------------------
+plt.plot(x,x+12,'8')
+plt.plot(x,x+9,'s')
+plt.plot(x,x+6,'P')
+plt.plot(x,x+3,'p')
+------------------------------------------
+plt.plot(x,x+12,'*')
+plt.plot(x,x+9,'h')
+plt.plot(x,x+6,'x')
+plt.plot(x,x+3,'+')
+------------------------------------------
+plt.plot(x,x+12,'d')
+plt.plot(x,x+9,'|')
+plt.plot(x,x+6,'_')
+------------------------------------------
+plt.plot(x,x+12,'r*')
+plt.plot(x,x+9,'gh')
+plt.plot(x,x+6,'bx')
+plt.plot(x,x+3,'y+')
+*
+Matplotlib - scatter
+import matplotlib.pyplot as plt
+x=np.random.rand(500)
+y=np.random.rand(500) 
+plt.scatter(x,y)
+------------------------------------------
+z=np.random.normal(0,1,1000) 
+plt.scatter(x,y,c=z)
+------------------------------------------
+w=50*np.random.normal(0,1,1000) 
+plt.scatter(x,y,s=w,c=z)
+------------------------------------------
+sz = 1000 * rng.rand(100)
+plt.scatter(x, y,c=cl,s=sz,alpha=0.3)
+plt.show()
+------------------------------------------
+x=[1,2,3,4,5,6,7,8,9,10]
+y=[4,7,8,3,0,5,9,4,1,9]
+w=[600,900,800,700,400,200,300,100,600,300]
+z=[7,5,6,9,8,5,6,3,2,1]
+plt.scatter(x,y,s=w,c=z)
+plt.show()
+------------------------------------------
+plt.colorbar()
+*
+Matplotlib - pie
+import matplotlib.pyplot as plt
+plt.pie([15,30,45,10])
+plt.show()
+------------------------------------------
+plt.axis('equal')
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'))
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),explode = [0.1,0.1,0.1,0.1])
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%')
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%'
+        ,shadow = True)
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%'
+        ,shadow = True,startangle = 90)
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%'
+        ,shadow = True,startangle = 180)
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%'
+        ,shadow = True, startangle = 180,
+        labeldistance = 1.5)
+------------------------------------------
+plt.pie([15,30,45,10],labels=('Egypt','Syria','Tunise','Morroco'),
+        explode = [0.1,0.1,0.1,0.1],autopct ='%1.1f%%'
+        ,shadow = True, startangle = 180,
+        labeldistance = 1.5, pctdistance =1.2)
+plt.axis('equal')
+plt.show()
+
+*
+Matplotlib - bar
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0,20,20)
+y = np.random.randint(50,size = 20)
+plt.bar(x , y)
+------------------------------------------
+plt.bar(x,y,width=0.9)
+------------------------------------------
+plt.bar(x,y,width=0.9,color='r')
+------------------------------------------
+plt.bar(x,y,width=0.9,color='r',alpha=.5)
+------------------------------------------
+plt.bar(x,y,facecolor='r',edgecolor ='g')
+------------------------------------------
+plt.bar(x,y,facecolor='r',edgecolor ='g')
+------------------------------------------
+plt.text(7, -9, 'Polulation Denisty', style='italic',
+        bbox={'facecolor':'blue', 'alpha':0.5, 'pad':10})
+------------------------------------------
+import matplotlib.pyplot as pl
+import numpy as np
+n = 12
+X = np.arange(n)
+Y1 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+Y2 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+pl.bar(X, +Y1, color='r',alpha = 0.5)
+pl.bar(X, -Y2, facecolor='b',alpha = 0.5)
+for x, y in zip(X, Y1):
+    pl.text(x + 0.4, y + 0.05, '%.2f' % y, ha='center', va='bottom')
+    pl.ylim(-1.25, +1.25)
+
+*
+Matplotlib - hist
+import numpy as np
+import matplotlib.pyplot as plt
+data = np.random.randn(5000)
+plt.hist(data)
+------------------------------------------
+plt.hist(data, bins=50, normed=True, alpha=0.5,histtype='step',color='blue')
+------------------------------------------
+plt.hist(data, bins=50, normed=True, alpha=0.5,histtype='bar',color='r')
+------------------------------------------
+data = np.random.multivariate_normal([0, 0], [[5, 2], [2, 2]], size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+for col in 'xy':
+ plt.hist(data[col], normed=True, alpha=1)
+------------------------------------------
+x1 = np.random.normal(0, 0.8, 1000)
+x2 = np.random.normal(-2, 1, 1000)
+x3 = np.random.normal(3, 2, 1000)
+plt.hist(x1,histtype='bar', alpha=0.3, normed=True, bins=100)
+plt.hist(x2,histtype='step', alpha=0.7, normed=True, bins=100)
+plt.hist(x3,histtype='stepfilled',alpha=1, normed=True, bins=100)
+------------------------------------------
+kwargs = dict(histtype='stepfilled', alpha=0.6, normed=True, bins=40)
+plt.hist(x1, **kwargs)
+plt.hist(x2, **kwargs)
+plt.hist(x3, **kwargs);
+
+*
+Matplotlib - hist2d
+x = np.random.rand(20)
+y = np.random.rand(20)
+plt.hist2d(x, y)
+------------------------------------------
+plt.hist2d(x, y, cmap='Reds')
+------------------------------------------
+plt.hist2d(x, y, cmap='Blues', bins=30)
+------------------------------------------
+plt.hist2d(x, y, cmap='Blues', bins=30)
+plt.colorbar()
+------------------------------------------
+plt.hist2d(x, y, cmap='Blues', bins=30)
+a = plt.colorbar()
+------------------------------------------
+a.set_label('counts in bin')
+plt.hist2d(x, y, bins=30, cmap='Blues')
+plt.colorbar()
+------------------------------------------
+mean = [0, 0]
+cov = [[1, 1], [1, 2]]
+x, y = np.random.multivariate_normal(mean, cov, 10000).T
+plt.hist2d(x, y, bins=30, cmap='Blues')
+plt.colorbar()
+
+*
+Matplotlib - hexbin
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.random.rand(200)
+y = np.random.rand(200)
+plt.hexbin(x, y, gridsize=30, cmap='Blues')
+a = plt.colorbar()
+a.set_label('counts in bin')
+------------------------------------------
+mean = [0, 0]
+cov = [[1, 1], [1, 2]]
+x, y = np.random.multivariate_normal(mean, cov, 10000).T
+plt.hexbin(x, y, gridsize=30, cmap='Blues')
+cb = plt.colorbar()
+cb.set_label('counts in bin')
+*
+Matplotlib - contour
+import matplotlib.pyplot as plt
+
+X = [1,2,3,4,5,6,7]
+Y = [1,2,3,4,5,6,7]
+Z = [[1,1,1,1,1,1,1],
+     [1,2,2,2,2,2,1],
+     [1,2,3,3,3,2,1],
+     [1,2,3,4,3,2,1],
+     [1,2,3,3,3,2,1],
+     [1,2,2,2,2,2,1],
+     [1,1,1,1,1,1,1]]
+plt.contour(X, Y, Z, colors='red')
+------------------------------------------
+X = np.random.randint(1,10,6)
+Y = np.random.randint(1,10,6)
+Z = np.random.randint(1,10,36)
+ZZ = np.reshape(Z,(6,6))
+plt.contour(X, Y, ZZ, colors='red')
+------------------------------------------
+plt.contour(X, Y, Z, 20 , cmap='RdGy')
+------------------------------------------
+plt.contourf(X, Y, Z, 20 , cmap='RdGy')
+------------------------------------------
+pl.contourf(X, Y, f(X, Y), 8, alpha=.75, cmap='jet')
+------------------------------------------
+C = pl.contour(X,Y,f(X,Y),8,colors='b')
+------------------------------------------
+pl.contourf(X, Y, f(X, Y), 8, alpha=.75, cmap='jet')
+C = pl.contour(X,Y,f(X,Y),8,colors='b')
+
+*
+Matplotlib - 3D
+from mpl_toolkits import mplot3d
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+------------------------------------------
+ax.plot_surface(cmap ='hot') # Color
+------------------------------------------
+Accent, Accent_r, Blues, Blues_r, BrBG, BrBG_r, BuGn, BuGn_r, BuPu, BuPu_r, CMRmap, CMRmap_r, Dark2, Dark2_r, GnBu, GnBu_r, Greens, Greens_r, Greys, Greys_r, OrRd, OrRd_r, Oranges, Oranges_r, PRGn, PRGn_r, Paired, Paired_r, Pastel1, Pastel1_r, Pastel2, Pastel2_r, PiYG, PiYG_r, PuBu, PuBuGn, PuBuGn_r, PuBu_r, PuOr, PuOr_r, PuRd, PuRd_r, Purples, Purples_r, RdBu, RdBu_r, RdGy, RdGy_r, RdPu, RdPu_r, RdYlBu, RdYlBu_r, RdYlGn, RdYlGn_r, Reds, Reds_r, Set1, Set1_r, Set2, Set2_r, Set3, Set3_r, Spectral, Spectral_r, Vega10, Vega10_r, Vega20, Vega20_r, Vega20b, Vega20b_r, Vega20c, Vega20c_r, Wistia, Wistia_r, YlGn, YlGnBu, YlGnBu_r, YlGn_r, YlOrBr, YlOrBr_r, YlOrRd, YlOrRd_r, afmhot, afmhot_r, autumn, autumn_r, binary, binary_r, bone, bone_r, brg, brg_r, bwr, bwr_r, cool, cool_r, coolwarm, coolwarm_r, copper, copper_r, cubehelix, cubehelix_r, flag, flag_r, gist_earth, gist_earth_r, gist_gray, gist_gray_r, gist_heat, gist_heat_r, gist_ncar, gist_ncar_r, gist_rainbow, gist_rainbow_r, gist_stern, gist_stern_r, gist_yarg, gist_yarg_r, gnuplot, gnuplot2, gnuplot2_r, gnuplot_r, gray, gray_r, hot, hot_r, hsv, hsv_r, inferno, inferno_r, jet, jet_r, magma, magma_r, nipy_spectral, nipy_spectral_r, ocean, ocean_r, pink, pink_r, plasma, plasma_r, prism, prism_r, rainbow, rainbow_r, seismic, seismic_r, spectral, spectral_r, spring, spring_r, summer, summer_r, tab10, tab10_r, tab20, tab20_r, tab20b, tab20b_r, tab20c, tab20c_r, terrain, terrain_r, viridis, viridis_r, winter, winter_r
+------------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure() #adjust 3D figure
+ax = Axes3D(fig)
+X = np.arange(-4,4,0.25) # X Value
+Y = np.arange(-4,4,0.25) # Y Value
+X,Y = np.meshgrid(X,Y) # combine them
+R = np.sqrt(X**2 + Y**2) # function
+Z = np.sin(R) # Z Value
+ax.plot_surface(X,Y,Z) # Draw them
+plt.show()
+------------------------------------------
+ax.set_xlabel('Time')
+ax.set_ylabel('Work')
+ax.set_zlabel('Efficiency')
+------------------------------------------
+ax.plot_surface(X,Y,Z,cmap ='Blues'
+                ,edgecolors='w') # Color
+plt.show()
+ ------------------------------------------
+ax.set_zlim(-0.5,0.5)
+------------------------------------------
+ax.view_init(-50, 26)
+plt.show()
+
+*
+Matplotlib - 3D Models
+import numpy as np
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+zline = np.linspace(0, 15, 1000)
+xline = np.sin(zline)
+yline = np.cos(zline)
+ax.plot3D(xline, yline, zline, 'b')
+------------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+z = 15 * np.random.random(500)
+x =np.sin(z)+0.1*np.random.randn(500)
+y =np.cos(z)+0.1*np.random.randn(500)
+ax.scatter3D(x,y,z,c=z,cmap='Reds')
+------------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+fig = plt.figure()
+
+ax = plt.axes(projection='3d')
+zline = np.linspace(0, 15, 1000)
+xline = np.sin(zline)
+yline = np.cos(zline)
+ax.plot3D(xline, yline, zline, 'b')
+
+z= 15 * np.random.random(100)
+x= np.sin(z) + 0.1 * np.random.randn(100)
+y= np.cos(z) + 0.1 * np.random.randn(100)
+ax.scatter3D(x,y,z,c=z,cmap='Reds')
+------------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+fig = plt.figure()
+
+def f(x, y):
+    return np.sin(np.sqrt(x ** 2 + y ** 2))
+ 
+theta = 2 * np.pi * np.random.random(1000)
+r = 6 * np.random.random(1000)
+x = r * np.sin(theta)
+y = r * np.cos(theta)
+z = f(x, y)
+
+ax = plt.axes(projection='3d')
+ax.plot_trisurf(x, y, z,cmap='viridis')
+------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+fig = plt.figure()
+
+def f(x, y):
+    return np.sin(np.sqrt(x ** 2 + y ** 2))
+x = np.linspace(-6, 6, 30)
+y = np.linspace(-6, 6, 30)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.contour3D(X, Y, Z, 50, cmap='Blues')
+------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+fig = plt.figure()
+
+def f(x, y):
+    return np.cos(np.sqrt(x ** 2 + y ** 2))
+x = np.linspace(-6, 6, 20)
+y = np.linspace(-6, 6, 20)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+ax.plot_wireframe(X, Y, Z, cmap='Blues')
+------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+fig = plt.figure()
+
+def f(x, y):
+    return np.cos(np.sqrt(x ** 2 + y ** 2))
+x = np.linspace(-6, 6, 20)
+y = np.linspace(-6, 6, 20)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, Z, edgecolor='w')
+------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+fig = plt.figure()
+
+def f(x, y):
+    return np.sin(np.sqrt(x ** 2 + y ** 2))
+x = np.linspace(-6, 6, 20)
+y = np.linspace(-6, 6, 20)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.scatter(X, Y, Z)
+*
+Matplotlib - subplot
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0,100)
+plt.subplot(1,2,1)
+y = 3*x
+plt.plot(x,y,c='r')
+plt.subplot(1,2,2)
+y = -3*x
+plt.plot(x,y,c='g')
+------------------------------------------
+plt.subplot(1,2,3)   #wrong example
+------------------------------------------
+plt.subplot(2,2,1)
+y = 3*x
+plt.plot(x,y,c='r')
+plt.subplot(2,2,2)
+y = -3*x
+plt.plot(x,y,c='g')
+plt.subplot(2,2,3)
+y = x**2
+plt.plot(x,y,c='b')
+plt.subplot(2,2,4)
+y =  x**0.5
+plt.plot(x,y,c='r')
+------------------------------------------
+plt.subplot(221)
+plt.subplot(222)
+plt.subplot(2,2,3)
+plt.subplot(2,2,4)
+------------------------------------------
+fig, ax = plt.subplots(5)
+ax[0].plot(x,3*x)
+ax[1].plot(x,-x/400)
+ax[2].plot(x,300*(0.002*x+3))
+ax[3].plot(x,np.sin(x))
+ax[4].plot(x,x**0.1)
+------------------------------------------
+plt.subplots_adjust(left=0,right=1.5,bottom=0,top=1.5,wspace=0,hspace=0)
+------------------------------------------
+plt.text(0.5, 0.5, str((2, 3, 5)),fontsize=18, ha='center')
+------------------------------------------
+fig, ax = plt.subplots(2, 3, sharex='col')
+------------------------------------------
+fig, ax = plt.subplots(2, 3, sharey='row')
+------------------------------------------
+fig, ax = plt.subplots(2, 3, sharex ='col' ,sharey='row')
+------------------------------------------
+grid = plt.GridSpec(2, 3)
+plt.subplot(grid[0, 0])
+plt.subplot(grid[0, 1:])
+plt.subplot(grid[1, :2])
+plt.subplot(grid[1, 2])
+------------------------------------------
+fig = plt.figure()
+ax = fig.add_subplot(111, polar=True)
+r = np.arange(0,1,0.001)
+theta = np.pi*r*4
+line, = ax.plot(theta, r, color='r', lw=3)
+------------------------------------------
+fig = plt.figure()
+ax = fig.add_subplot(111, polar=True)
+r = np.arange(0,1,0.001)
+theta = np.pi*r*25
+line, = ax.plot(theta, r, color='r', lw=3)
+
+*
+Matplotlib - annotate
+import matplotlib.pyplot as plt
+import numpy as np
+fig, ax = plt.subplots()
+x = np.linspace(0, 20, 1000)
+y= -((x-10)**2) +5
+ax.plot(x,y)
+plt.annotate('Max',xy=(10,6),xytext =(15,10),arrowprops =dict(color='r',shrink=0.02,lw =1.5))
+plt.annotate('5',xy=(5,-20),xytext =(2,0),arrowprops =dict(color='b',shrink=3,lw =5))
+plt.annotate('15',xy=(15,-20),xytext =(10,-60),arrowprops =dict(color='g',shrink=3,lw =9))
+------------------------------------------
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+import numpy as np
+
+fig, ax = plt.subplots()
+x = np.linspace(0, 20, 1000)
+ax.plot(x, np.cos(x))
+ax.axis('equal')
+
+ax.annotate('local maximum', xy=(6.28, 1)
+            ,xytext=(10, 4),arrowprops=dict(color='b'))
+
+ax.annotate('local minimum', xy=(5*np.pi,-1)
+            ,xytext=(2, -6),arrowprops=dict(color='r'
+            ,connectionstyle="angle3,angleA=0,angleB=-90"))
+
+*
+Matplotlib - imshow
+import matplotlib.pyplot as plt
+I=  [[1,1,1,1,1,1,1],
+     [1,2,2,2,2,2,1],
+     [1,2,3,3,3,2,1],
+     [1,2,3,4,3,2,1],
+     [1,2,3,3,3,2,1],
+     [1,2,2,2,2,2,1],
+     [1,1,1,1,1,1,1]]
+plt.imshow(I)
+plt.colorbar()
+------------------------------------------
+plt.style.use('classic')
+------------------------------------------
+plt.imshow(I, cmap='gray');
+------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(-10, 10, 1000)
+I = np.cos(x) * np.sin(x[:, np.newaxis])
+
+speckles = (np.random.random(I.shape) < 0.01)
+
+I[speckles] = np.random.normal(0, 3, 
+             np.count_nonzero(speckles))
+
+plt.figure(figsize=(10, 3.5))
+plt.imshow(I, cmap='RdBu')
+plt.colorbar()
+plt.clim(-1, 1)
+
+*
+Matplotlib - legend
+import matplotlib.pyplot as plt
+import numpy as np
+ 
+x = np.linspace(0, 20, 1000)
+fig, ax = plt.subplots()
+plt.axis('equal')
+ax.plot(x, np.sin(x),  label='Sin')
+ax.plot(x, np.cos(x), label='Cos')
+leg = ax.legend()
+------------------------------------------
+ax.legend(loc='upper left', frameon=False)
+------------------------------------------
+ax.legend(frameon=False,loc='lower center', ncol=2)
+------------------------------------------
+ax.legend(fancybox=True, # curvy or not
+          framealpha=1, #1 for white,0 for black
+          shadow=True, # shadow or not
+          borderpad=1 , fontsize=30 ) #how big of box
+------------------------------------------
+lines = plt.plot(x, y)
+# lines is a list of plt.Line2D instances
+plt.legend(lines[:2], ['Cost', 'Time'])
+
+*
+Matplotlib - lines
+import matplotlib.pyplot as plt
+plt.vlines(0,-1,1,lw=5, color='r')
+# value of X then Y start then Y end
+------------------------------------------
+plt.vlines(-2,-5,5,lw=5, color='r')
+plt.vlines(-1,-4,4,lw=10, color='g')
+plt.vlines(0,-3,3,lw=15, color='b')
+plt.vlines(1,-2,2,lw=20, color='y')
+plt.vlines(2,-1,1,lw=25, color='black')
+------------------------------------------
+plt.hlines(w,-1,1,lw=10, color='b')
+
+*
+Matplotlib - limits
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-10,10) 
+ax = plt.axes()
+ax.set_xlim(-20,20)
+ax.set_ylim(-20,20)
+plt.plot(x,-x**2  )
+------------------------------------------
+plt.axis([-20,10,-10,20])
+#X start , X end , Y start , Y end
+plt.plot(x,-x**2  )
+------------------------------------------
+ax = plt.axes()
+ax.set(xlim=(-5, 10), ylim=(-20, 20) )
+plt.plot(x,-x**2  )
+------------------------------------------
+plt.axis('equal')
+------------------------------------------
+ax.xaxis.set_visible(False)
+ax.yaxis.set_visible(False)
+plt.plot(x,-x**2  )
+
+*
+Matplotlib - patches
+import matplotlib.patches as pat
+import matplotlib.pyplot as plt 
+c = pat.Circle((0.5, 0.5),radius=0.1)
+ax = plt.axes()
+ax.add_patch(c)
+------------------------------------------
+c = pat.Circle((0.5, 0.5),radius=0.1
+               ,edgecolor='red',facecolor='g', alpha=0.3)
+------------------------------------------
+c = pat.Circle((-2,5),radius=4
+               ,color='b', alpha=1)
+------------------------------------------
+c = pat.Ellipse((-2,5),2,3,20,color='r')
+#center , width , height , angle , color
+------------------------------------------
+c = pat.Rectangle((0.2, 0.2), 1, 1.2, color='r',angle =20 )
+ #location of southwest ,width ,hight ,color , angle
+------------------------------------------
+c = pat.Rectangle((-2, 3), 4,2, color='b',angle =-30 )
+------------------------------------------
+c = pat.Polygon(((-7,-7), (5,-2), (-5,5)) ,color='b')
+# vertices , color
+------------------------------------------
+c = pat.Polygon(((-7,-7),(5,-2),(2,7),(-5,5)) ,color='b')
+# vertices , color
+------------------------------------------
+c = pat.Polygon(((-7,-7),(0,-8),(5,-7),(8,0),
+                 (0,-3),(3,8),(0,10),(-10,5)),
+                color='b')
+------------------------------------------
+c = pat.Arc((3,2),7,10,theta1=0,theta2=80  )
+# center , width , height ,start angle , end angle
+------------------------------------------
+c = pat.Arc((3,2),7,10,theta1=80,theta2=300,color='r' )
+*
+Matplotlib - images
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+------------------------------------------
+print(a.shape)
+------------------------------------------
+print(a)
+------------------------------------------
+print(a.size)
+------------------------------------------
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+
+f= open("D:\\2.txt","w+")
+b,c,d = a.shape
+
+for x in range(b):
+    for y in range(c):
+        for z in range(3):
+            f.write('\n' + str('Data for : ' +str(x) 
+            +' & ' + str(y) +' & ' + str(z)) +' is :  '
+            + str((a[x,y,z])))
+f.close()
+------------------------------------------
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+plt.imshow(a)
+------------------------------------------
+x = a[:,:,0]
+plt.subplot(222)
+plt.imshow(x)
+y = a[:,:,1]
+plt.subplot(223)
+plt.imshow(y)
+z = a[:,:,2]
+plt.subplot(224)
+plt.imshow(z)
+------------------------------------------
+plt.subplot(221)
+plt.imshow(a)
+x = a[:200,:300,:]
+plt.subplot(222)
+plt.imshow(x)
+y = a[120:470,220:550,:]
+plt.subplot(223)
+plt.imshow(y)
+z = a[300:350,450:500,:]
+plt.subplot(224)
+plt.imshow(z)
+------------------------------------------
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+plt.imsave('D:\\6.jpg', a)
+------------------------------------------
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+plt.imsave('D:\\6.jpg', a[:,0:500])
+b = plt.imread('D:\\6.jpg')
+plt.imshow(b)
+------------------------------------------
+import matplotlib.pyplot as plt 
+a = plt.imread('D:\\1.jpg')
+plt.imsave('D:\\6.jpg', a[::15,::15])
+b = plt.imread('D:\\6.jpg')
+plt.imshow(b)
+
+*
+Seaborn
+import pandas as pd
+import numpy as np
+import seaborn as sns
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+sns.kdeplot(data)
+------------------------------------------
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+
+for col in 'xy':
+    sns.kdeplot(data[col], shade=True)
+------------------------------------------
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+
+for col in 'xy':
+    sns.kdeplot(data[col], shade=False)
+------------------------------------------
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+
+for col in 'xy':
+    sns.kdeplot(data[col], shade=True)
+
+sns.distplot(data['x'])
+sns.distplot(data['y'])
+------------------------------------------
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+with sns.axes_style('white'):
+    sns.jointplot("x", "y", data, kind='kde');
+------------------------------------------
+data =np.random.multivariate_normal([0,0],[[5,2],[2,2]],size=2000)
+data = pd.DataFrame(data, columns=['x', 'y'])
+
+with sns.axes_style('white'):
+    sns.jointplot("x", "y", data, kind='hex')
+
+*
+Scipy - fminbound
+import numpy as np
+import scipy as sc
+
+def f(x):
+    return x**2 + 10*np.sin(x)
+
+a = sc.optimize.fminbound(f,# function
+                          x1 = -10,# first bound 
+                          x2 = 10,#second bound
+                          xtol = 0.01, # Max Tolerance
+                          full_output = True,# details 
+                          disp = 1 ) #show only numbers
+
+print(a)
+# Value of x , Value of y , 0 for convergance
+# , number of iterations
+------------------------------------------
+a = sc.optimize.fminbound(f,# function
+                          x1 = -10,# first bound 
+                          x2 = 10,#second bound
+                          xtol = 0.01, # Max Tolerance
+                          full_output = True,# details 
+                          disp = 2 ) #show some details
+
+print(a)
+# Value of x , Value of y , 0 for convergance
+# , number of iterations
+------------------------------------------
+a = sc.optimize.fminbound(f,# function
+                          x1 = -10,# first bound 
+                          x2 = 10,#second bound
+                          xtol = 0.01, # Max Tolerance
+                          full_output = True,# details 
+                          disp = 3 ) #show iterations
+
+print(a)
+# Value of x , Value of y , 0 for convergance
+# , number of iterations
+------------------------------------------
+from scipy import optimize
+
+def a(x):
+    return (x)
+def b(x):
+    return (x**2)
+def c(x):
+    return (x**3)
+def d(x):
+    return (x**2 - 4*x + 1)
+def e(x):
+    return (x**3 + x**2 - 4*x - 3)
+def f(x):
+    return (1/x)
+
+amin = optimize.fminbound(a, -4, 4)
+print(amin)
+bmin = optimize.fminbound(b, -4, 4)
+print(bmin)
+cmin = optimize.fminbound(c, -4, 4)
+print(cmin)
+dmin = optimize.fminbound(d, -4, 4)
+print(dmin)
+emin = optimize.fminbound(e, -4, 4)
+print(emin)
+fmin = optimize.fminbound(f, -4, 4)
+print(fmin)
+
+*
+Scipy - fmin_bfgs
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy as sc
+def f(x):
+    return x**2 + 10*np.sin(x)
+
+x = np.arange(-10, 10, 0.1)
+plt.plot(x, f(x))
+plt.show()
+a = sc.optimize.fmin_bfgs(f, #function
+                          x0 = 50 , # a value to start
+                          epsilon = 10 ,  # step
+                          disp = 1 , # if 1 then display full details
+                          retall = 1 ,# if 1 then display all iterations
+                          maxiter = 2 ) #max no. if ierations
+print(a)
+------------------------------------------
+a = sc.optimize.fmin_bfgs(f, #function
+                          x0 = 50 , # a value to start
+                          epsilon = 0.1 ,  # step
+                          disp = 1 , # if 1 then display full details
+                          retall = 1 ,# if 1 then display all iterations
+                          maxiter = 20 ) #max no. if ierations
+print(a)
+
+*
+Scipy - basinhopping
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy as sc
+
+def f(x):
+    return x**2 + 10*np.sin(x)
+
+x = np.arange(-10, 10, 0.1)
+plt.plot(x, f(x))
+plt.show()
+
+a = sc.optimize.basinhopping(f,  #function
+                             x0 = 70 ,# a value to start
+                             niter = 20 , #max no. if ierations
+                             stepsize = .2 ,# step
+                             disp = 0) # if 1 then display full details
+print(a)
+------------------------------------------
+func = lambda x: np.cos(14.5 * x - 0.3) + (x + 0.2) * x
+x0=[1.]
+
+ret = sc.optimize.basinhopping(func, #function
+                               x0 , # a value to start
+                                # method = BFGS
+                               minimizer_kwargs={"method": "BFGS"},
+                               niter=200) #max no. if ierations
+print("global minimum: x = %.4f, f(x0) = %.4f" % (ret.x, ret.fun))
+------------------------------------------
+def func2d(x):
+    f = np.cos(14.5*x[0]-0.3)+(x[1]+0.2)*x[1]+(x[0]+0.2)*x[0]
+    df = np.zeros(2)
+    return f, df
+
+x0 = [1.0, 1.0]
+ret = sc.optimize.basinhopping(
+        func2d,
+        x0, 
+        minimizer_kwargs={"method":"L-BFGS-B", "jac":True},
+        niter=2000)
+
+print("global minimum: x = [%.4f, %.4f], f(x0) = %.4f" % 
+      (ret.x[0],ret.x[1],ret.fun))
+*
+Scipy - fsolve
+import scipy as sc
+def f(x):
+    return x**2 - 2*x -15
+
+a = sc.optimize.fsolve(f,x0 = 10 , full_output=False )
+print(a)
+------------------------------------------
+a = sc.optimize.fsolve(f,x0 = 10 , full_output=True )
+print(a)
+
+*
+Scipy - curve_fit
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+#function
+def func(x, a, b, c):
+    return a * np.exp(-b * x) + c
+#random values of X 
+xdata = np.linspace(0, 4, 50)
+y = func(xdata, 2.5, 1.3, 0.5)
+np.random.seed(1729)
+# y noise
+y_noise = 0.2 * np.random.normal(size=xdata.size)
+ydata = y + y_noise
+plt.plot(xdata, ydata, 'b-', label='data')  # draw the blue line
+
+popt, pcov = curve_fit(func, xdata, ydata) #fitting
+plt.plot(xdata, func(xdata, *popt), 'r-', #draw the red line
+         label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
+
+#fit with bounds
+popt, pcov =curve_fit(func,xdata,ydata,bounds=(0,[3., 1., 0.5]))
+plt.plot(xdata, func(xdata, *popt),  #draw the green line
+         'g--',label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.show()
+
+*
+webbrowser
+import webbrowser as w
+w.open('www.fb.com') 
+
+*
+glob
+import glob as gb
+a = gb.glob(pathname= 'D:\\Machine Learning\\000\\*.*')
+print(a)
+------------------------------------------
+import glob as gb
+b = gb.glob1('D:\\Machine Learning\\000\\' , '*.*' )
+print(b)
+------------------------------------------
+import glob as gb
+a = gb.glob(pathname= 'D:\\Machine Learning\\000\\*.pdf')
+print(a)
+------------------------------------------
+import glob as gb
+b = gb.glob1('D:\\Machine Learning\\000\\' , '*.pdf' )
+print(b)
+
+*
+try except
+while True : 
+    try : 
+        n = input("Number?")
+        n = int(n)
+        print(n*5)
+        break
+    except   :
+        print ("wrong format")
+        break
+    finally : 
+        print ("end")
+------------------------------------------
+z = input ('number ? ')
+
+try:
+    x = 1 / int(z)
+    print(x)
+except ZeroDivisionError as err:
+    print("Error message is:", err)
+*
+datetime
+from datetime import date
+now = date.today()
+print(now)
+------------------------------------------
+from datetime import date
+now = date.today()
+a = now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
+print(a)
+------------------------------------------
+from datetime import date
+a = date(1982, 2, 2)
+print(a)
+------------------------------------------
+from datetime import date
+now = date.today()
+a = date(1982, 2, 2)
+z = now-a
+print(z)
+------------------------------------------
+from datetime import date
+now = date.today()
+
+a = date(1982, 2, 2)
+b = date(2011, 3, 15)
+z = b-a
+
+print(z)
+------------------------------------------
+from datetime import datetime
+a = datetime(year=2011, month=3, day=15,
+             hour=13 ,minute = 15, second = 9)
+
+b = datetime(year=1982, month=2, day=2,
+             hour=18 ,minute = 43, second = 12)
+print(a)
+print(b)
+print(a-b)
+------------------------------------------
+import time
+t = time.gmtime()
+print(t)
+------------------------------------------
+import time
+def wait(x):
+    t0 = time.time()
+    while time.time() - t0 < x:
+        time.sleep(1)
+    return x
+
+print('start')
+wait(3)
+print('finish')
+
